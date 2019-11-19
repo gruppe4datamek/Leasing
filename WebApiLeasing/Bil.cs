@@ -13,6 +13,7 @@ namespace WebApiLeasing
         public Bil()
         {
             Leasing = new HashSet<Leasing>();
+            Console.WriteLine("sffewff");
         }
 
         [Key]

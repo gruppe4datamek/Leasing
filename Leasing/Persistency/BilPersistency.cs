@@ -8,5 +8,7 @@ namespace Leasing.Persistency
 {
     class BilPersistency
     {
+        
     }
+    
 }
