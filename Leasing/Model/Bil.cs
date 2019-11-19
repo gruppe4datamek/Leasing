@@ -8,6 +8,9 @@ namespace Leasing.Model
 {
     class Bil
     {
+        //konstruktør
+
+        private int årgang;
         private string model;
         //f
     }
