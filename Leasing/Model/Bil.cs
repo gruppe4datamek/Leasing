@@ -54,7 +54,7 @@ namespace Leasing.Model
             get { return _farve; }
             set { _farve = value; }
         }
-
+        //f
         
 
     }
