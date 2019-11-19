@@ -8,6 +8,6 @@ namespace Leasing.Model
 {
     class Bil
     {
-       
+        private string model;
     }
 }
