@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Leasing.Model
 {
-   public class Bil
+    public class Bil
     {
         //konstruktør
         private int _årgang;
@@ -24,8 +24,39 @@ namespace Leasing.Model
             _farve = farve;
         }
 
+
+        public int Årgang
+        {
+            get { return _årgang; }
+            set { _årgang = value; }
+        }
+
+        public string Model
+        {
+            get { return _model; }
+            set { _model = value; }
+        }
+
+        public string Mærke
+        {
+            get { return _mærke; }
+            set { _mærke = value; }
+        }
+
+        public int Kilometertal
+        {
+            get { return _kilometertal; }
+            set { _kilometertal = value; }
+        }
+
+        public string Farve
+        {
+            get { return _farve; }
+            set { _farve = value; }
+        }
+        //f
         
 
-        //f
     }
 }
+
