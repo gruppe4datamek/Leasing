@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 
 namespace Leasing.Model
 {
-    class Bil
+   public class Bil
     {
         //konstruktør
+        private int _årgang;
+        private string _model;
+        private string _mærke;
+        private int _kilometertal;
+        private string _farve;
 
-        private int årgang;
-        private string model;
+        public Bil(int årgang, string model, string mærke, int kilometertal, string farve)
+        {
+            _årgang = årgang;
+            _model = model;
+            _mærke = mærke;
+            _kilometertal = kilometertal;
+            _farve = farve;
+        }
+
+        
+
         //f
     }
 }
