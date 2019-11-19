@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="0,0,0,0">
                 <StackPanel Margin="0,0,0,0">
-                    <TextBlock Height="250" Width="1000" Margin="0,0,0,0" Text="Tilføj 1235211 Biler" FontSize="125" TextAlignment="Center"></TextBlock>
+                    <TextBlock Height="250" Width="1000" Margin="0,0,0,0" Text="Tilføj Biler" FontSize="125" TextAlignment="Center"></TextBlock>
                     <TextBox Header="Car Name" PlaceholderText="Enter Car Name Here" Height="75" Width="500" Margin="0,250,1000,0" TextWrapping="Wrap"></TextBox>
                 
                 </StackPanel>
