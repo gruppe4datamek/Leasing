@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Leasing.Model;
 
 namespace Leasing.ViewModel
 {
@@ -36,6 +37,7 @@ namespace Leasing.ViewModel
         public RelayCommand AddCommand { get; set; }
         public void tilføjBil()
         {
+           
             OnPropertyChanged(nameof(tilføjBil));
         }
         public string BIL_ID
