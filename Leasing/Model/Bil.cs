@@ -8,7 +8,7 @@ namespace Leasing.Model
 {
     public class Bil
     {
-        //konstruktør
+        //instance field
         private int _årgang;
         private string _model;
         private string _mærke;
@@ -54,9 +54,6 @@ namespace Leasing.Model
             get { return _farve; }
             set { _farve = value; }
         }
-        //f
-        
-
     }
 }
 
