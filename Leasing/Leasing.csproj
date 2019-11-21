@@ -124,6 +124,10 @@
     </Compile>
     <Compile Include="Model\Bil.cs" />
     <Compile Include="Persistency\BilPersistency.cs" />
+    <Compile Include="Persistency\EmployeePersistency.cs" />
+    <Compile Include="Persistency\GenericPersistency.cs" />
+    <Compile Include="Persistency\KundePersistency.cs" />
+    <Compile Include="Persistency\LeasingPersistency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\OpretBilViewModel.cs" />
     <Compile Include="View\OpretBilPage.xaml.cs">
@@ -163,6 +167,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.8</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
