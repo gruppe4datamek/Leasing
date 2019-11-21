@@ -36,7 +36,7 @@ namespace Leasing.ViewModel
         public RelayCommand AddCommand { get; set; }
         public void tilføjBil()
         {
-
+            OnPropertyChanged(nameof(tilføjBil));
         }
         public string BIL_ID
         {
