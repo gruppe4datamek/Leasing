@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="0,0,0,-665">
                 <StackPanel Margin="0,0,0,0">
-                    <TextBlock Height="250" Width="1000" Margin="0,0,0,0" Text="Tilføj Bil123er" FontSize="125" TextAlignment="Center"></TextBlock>
+                    <TextBlock Height="250" Width="1000" Margin="0,0,0,0" Text="Tilføj Biler" FontSize="125" TextAlignment="Center"></TextBlock>
                     <TextBox x:Name="Bil_ID" Header="Bil ID"  Height="75" Width="500" Margin="0,100,625,0" TextWrapping="Wrap" Text="{Binding BIL_ID, Mode=TwoWay}"></TextBox>
                     <TextBox x:Name="Model" Header="Model"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text="{Binding Model, Mode=TwoWay}"></TextBox>
                     <TextBox x:Name="Mærke" Header="Mærke"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text="{Binding Mærke Mode=TwoWay }"></TextBox>
