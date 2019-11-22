@@ -7,31 +7,35 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+
     <Grid>
+   
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
         <StackPanel Margin="0,0,0,-665">
-                <StackPanel Margin="0,0,0,0">
-                    <TextBlock Height="250" Width="1000" Margin="0,0,0,0" Text="Tilføj Biler" FontSize="125" TextAlignment="Center"></TextBlock>
-                    <TextBox x:Name="Bil_ID" Header="Bil ID"  Height="75" Width="500" Margin="0,100,625,0" TextWrapping="Wrap" Text="{Binding BIL_ID, Mode=TwoWay}"></TextBox>
-                    <TextBox x:Name="Model" Header="Model"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text="{Binding Model, Mode=TwoWay}"></TextBox>
-                    <TextBox x:Name="Mærke" Header="Mærke"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text="{Binding Mærke Mode=TwoWay }"></TextBox>
-                    <TextBox x:Name="Kilometertal" Header="Kilometertal"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text="{Binding Kilometertal Mode=TwoWay}"></TextBox>
-                    <TextBox x:Name="Farve" Header="Farve"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text="{Binding Farve Mode=TwoWay}"></TextBox>
+            <StackPanel Margin="0,0,0,0">
+                <TextBlock Height="250" Width="1000" Margin="0,0,0,0" Text="Tilføj Bil123er" FontSize="125" TextAlignment="Center"></TextBlock>
+                <TextBox x:Name="Bil_ID" Header="Bil ID"  Height="75" Width="500" Margin="0,100,625,0" TextWrapping="Wrap" Text=""></TextBox>
+                <TextBox x:Name="Model" Header="Model"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text=""></TextBox>
+                <TextBox x:Name="Mærke" Header="Mærke"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text=""></TextBox>
+                <TextBox x:Name="Kilometertal" Header="Kilometertal"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text=""></TextBox>
+                <TextBox x:Name="Farve" Header="Farve"  Height="75" Width="500" Margin="0,0,625,0" TextWrapping="Wrap" Text=""></TextBox>
+              
 
-                    
 
-                <Button Command="{Binding AddCommand}" Name="AddButton" Height="35" Width="75" Margin="35,25,0,0" >
+                <Button Name="AddButton" Height="35" Width="75" Margin="35,25,0,0" >
                     <TextBlock Text="Add" Margin="0,0,0,0" ></TextBlock>
                 </Button>
             </StackPanel>
 
-            
+
         </StackPanel>
+
+
+        
         
 
     </Grid>
