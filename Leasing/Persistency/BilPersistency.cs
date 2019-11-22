@@ -19,10 +19,12 @@ namespace Leasing.Persistency
 
       
 
-        public void AddBil(Bil b)
+        public async Task AddBilAsync(Bil b)
         {
-            GenericPersistency<Bil>.PostStudent();
+            await GenericPersistency<Bil>.PostCar(ServerUrl, b); 
         }
         
     }
+    
 }
+
