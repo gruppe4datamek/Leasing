@@ -14,6 +14,16 @@ namespace Leasing.Model
         private string _mærke;
         private int _kilometertal;
         private string _farve;
+        private string v;
+
+        public Bil()
+        {
+        }
+
+        public Bil(string v)
+        {
+            this.v = v;
+        }
 
         public Bil(int årgang, string model, string mærke, int kilometertal, string farve)
         {

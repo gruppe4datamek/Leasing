@@ -26,7 +26,7 @@ namespace Leasing.Persistency
                     if (response.IsSuccessStatusCode)
                     {
                         var status = response.Content.ReadAsStringAsync().Result;
-                        var billist = JsonConvert.DeserializeObject<List<Bil>>(status);
+                        List<Bil> billist = JsonConvert.DeserializeObject<List<Bil>>(status);
                         return billist;
                     }
 
@@ -39,6 +39,8 @@ namespace Leasing.Persistency
                 }
             }
         }
+
+        public static string ServerUrl { get; set; }
 
 
         public static async Task<string> PostStudent(string url, T objectToPost)

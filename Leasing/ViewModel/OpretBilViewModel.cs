@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Leasing.Domain;
 using Leasing.Model;
 
 namespace Leasing.ViewModel
@@ -21,22 +22,16 @@ namespace Leasing.ViewModel
         private string farve;
         private bool tilgængelig;
 
-        private CarCatalog singleton;
-        private ObservableCollection<Bil> _students;
+        private CarCatalogSingleton singleton;
+        private ObservableCollection<Bil> _bils;
         private Bil _selected;
         public OpretBilViewModel()
         {
             _selected = new Bil();
             AddCommand = new RelayCommand(tilføjBil);
-            
-            //catalog = new StudentCatalog();
-            //singleton = StudentCatalogSingleton.Instance;
+            singleton = new CarCatalogSingleton();
+            _bils = new ObservableCollection<Bil>();
 
-            
-
-            //_newStudent = new Student();
-
-           // _students = new ObservableCollection<Student>();
 
         }
 
@@ -82,7 +77,7 @@ namespace Leasing.ViewModel
             get { return tilgængelig; }
             set { tilgængelig = value; }
         }
-
+      
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged
             ([CallerMemberName] string propertyName = null)
