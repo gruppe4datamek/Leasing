@@ -124,6 +124,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Bil.cs" />
+    <Compile Include="Model\Kunde.cs" />
+    <Compile Include="Model\Leasing.cs" />
+    <Compile Include="Model\Medarbejder.cs" />
     <Compile Include="Persistency\BilPersistency.cs" />
     <Compile Include="Persistency\EmployeePersistency.cs" />
     <Compile Include="Persistency\GenericPersistency.cs" />
