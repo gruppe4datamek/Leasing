@@ -12,7 +12,7 @@ namespace Leasing.Persistency
 {
     class GenericPersistency<T>
     {
-        public static List<T> GetStudents(string url)
+        public static List<T> GetCar(string url)
         {
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
             using (var client = new HttpClient(handler))
@@ -41,7 +41,7 @@ namespace Leasing.Persistency
         }
 
 
-        public static async Task<string> PostStudent(string url, T objectToPost)
+        public static async Task<string> PostCar(string url, T objectToPost)
         {
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
             using (var client = new HttpClient(handler))
@@ -70,7 +70,7 @@ namespace Leasing.Persistency
         }
 
 
-        public static async Task DeleteStudent(string url)
+        public static async Task DeleteCar(string url)
         {
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
             using (var client = new HttpClient(handler))
@@ -93,7 +93,7 @@ namespace Leasing.Persistency
             }
         }
 
-        public async static Task PutStudent(string url, Bil objectToPut)
+        public async static Task PutCar(string url, Bil objectToPut)
         {
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
             using (var client = new HttpClient(handler))
