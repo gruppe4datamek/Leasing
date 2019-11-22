@@ -1,6 +1,7 @@
 ﻿using Leasing.Common;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -20,13 +21,18 @@ namespace Leasing.ViewModel
         private string farve;
         private bool tilgængelig;
 
-
+        private CarCatalog singleton;
+        private ObservableCollection<Bil> _students;
+        private Bil _selected;
         public OpretBilViewModel()
         {
+            _selected = new Bil();
+            AddCommand = new RelayCommand(tilføjBil);
+            
             //catalog = new StudentCatalog();
             //singleton = StudentCatalogSingleton.Instance;
 
-            AddCommand = new RelayCommand(tilføjBil);
+            
 
             //_newStudent = new Student();
 
