@@ -37,10 +37,27 @@
             </StackPanel>
 
 
-        </StackPanel>
+        </StackPanel> 
+        
         <ListView ItemsSource="{Binding Bils}">
             <ListView.ItemTemplate><DataTemplate>
-                <TextBlock Text="{Binding Model}"></TextBlock>
+                <TextBlock>
+                    <Run Text="model" />
+                    <Run Text="{Binding Model}" />-
+                    <Run Text="Mærke" />
+                    <Run Text="{Binding Mærke}" />-
+                    <Run Text="Kilometertal" />
+                    <Run Text="{Binding Kilometertal}" />-
+                    <Run Text="Farve" />
+                    <Run Text="{Binding Farve}" />-
+                    <Run Text="Årgang" />
+                    <Run Text="{Binding Årgang}" />-
+                    <Run Text="Tilgængelig" />
+                    <Run Text="{Binding Tilgængelig}" />
+
+
+
+                    </TextBlock>
             </DataTemplate></ListView.ItemTemplate>
 
         </ListView>
