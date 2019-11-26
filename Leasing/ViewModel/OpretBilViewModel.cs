@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using Windows.UI.StartScreen;
 using Leasing.Domain;
 using Leasing.Model;
+using Leasing.Persistency;
+using Newtonsoft.Json;
 
 namespace Leasing.ViewModel
 {
@@ -29,13 +31,18 @@ namespace Leasing.ViewModel
         private Bil _selected;
         public OpretBilViewModel()
         {
-            _selected = new Bil();
+            //_selected = new Bil();
             AddCommand = new RelayCommand(tilføjBil);
             singleton = new CarCatalogSingleton();
-            _bils = new ObservableCollection<Bil>();
+            Bils = new ObservableCollection<Bil>();
 
-
+            if(HentBiler() != null)
+                foreach(Bil b in HentBiler())
+                {
+                    Bils.Add(b);
+                }
         }
+       
 
         public RelayCommand AddCommand { get; set; }
         public void tilføjBil()
@@ -83,6 +90,12 @@ namespace Leasing.ViewModel
             set { tilgængelig = value; }
         }
 
+        public ObservableCollection<Bil> Bils
+        {
+            get { return _bils; }
+            set { _bils = value; }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged
@@ -91,6 +104,25 @@ namespace Leasing.ViewModel
             PropertyChanged?.Invoke(this, new
                 PropertyChangedEventArgs(propertyName));
         }
+        public IEnumerable<Bil> HentBiler()
+        {
+            try
+            {
+                var car = WebApiBilAsync.GetCar("api/Bils/");
+                //var carlist = JsonConvert.DeserializeObject<List<Bil>>("val");
+                //foreach (var m in carlist)
+                //{
+                //    Console.WriteLine(m);
+                //}
+                return car;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+                return null;
+            }
+        }
     }
+
    
 }

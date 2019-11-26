@@ -17,11 +17,14 @@ namespace Leasing.Model
         private string _farve;
         private bool _tilgængelig;
 
-        public Bil()
+        public Bil(string nummerplade, int årgang)
         {
         }
 
-       
+        public Bil()
+        {
+            
+        }
 
         public Bil(int nummerplade, int årgang, string model, string mærke, int kilometertal, string farve, bool tilgængelig)
         {

@@ -17,7 +17,7 @@ namespace Leasing.Persistency
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
             using (var client = new HttpClient(handler))
             {
-                //client.BaseAddress = url;
+                client.BaseAddress = new Uri("http://localhost:55492/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
@@ -25,7 +25,7 @@ namespace Leasing.Persistency
                     HttpResponseMessage response = client.GetAsync(url).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var status = response.Content.ReadAsStringAsync().Result;
+                        string status = response.Content.ReadAsStringAsync().Result;
                         List<Bil> billist = JsonConvert.DeserializeObject<List<Bil>>(status);
                         return billist;
                     }
