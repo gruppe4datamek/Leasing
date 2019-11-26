@@ -14,19 +14,19 @@ namespace WebApiLeasing.Controllers
 {
     public class MedarbejdersController : ApiController
     {
-        private LeasingDBcontext db = new LeasingDBcontext();
+        private LeasingDBContext db = new LeasingDBContext();
 
         // GET: api/Medarbejders
-        public IQueryable<Medarbejder> GetMedarbejder()
+        public IQueryable<Medarbejder> GetMedarbejders()
         {
-            return db.Medarbejder;
+            return db.Medarbejders;
         }
 
         // GET: api/Medarbejders/5
         [ResponseType(typeof(Medarbejder))]
         public IHttpActionResult GetMedarbejder(int id)
         {
-            Medarbejder medarbejder = db.Medarbejder.Find(id);
+            Medarbejder medarbejder = db.Medarbejders.Find(id);
             if (medarbejder == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace WebApiLeasing.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Medarbejder.Add(medarbejder);
+            db.Medarbejders.Add(medarbejder);
 
             try
             {
@@ -104,13 +104,13 @@ namespace WebApiLeasing.Controllers
         [ResponseType(typeof(Medarbejder))]
         public IHttpActionResult DeleteMedarbejder(int id)
         {
-            Medarbejder medarbejder = db.Medarbejder.Find(id);
+            Medarbejder medarbejder = db.Medarbejders.Find(id);
             if (medarbejder == null)
             {
                 return NotFound();
             }
 
-            db.Medarbejder.Remove(medarbejder);
+            db.Medarbejders.Remove(medarbejder);
             db.SaveChanges();
 
             return Ok(medarbejder);
@@ -127,7 +127,7 @@ namespace WebApiLeasing.Controllers
 
         private bool MedarbejderExists(int id)
         {
-            return db.Medarbejder.Count(e => e.Medarbejder_id == id) > 0;
+            return db.Medarbejders.Count(e => e.Medarbejder_id == id) > 0;
         }
     }
 }

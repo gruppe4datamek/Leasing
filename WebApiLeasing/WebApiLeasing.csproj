@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4133B5C7-1DF5-4E8D-90CC-282D80CDB7F4}</ProjectGuid>
+    <ProjectGuid>{30F736D1-4242-45F3-A950-0FDF60DDAAED}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -174,10 +174,9 @@
     </Compile>
     <Compile Include="Kunde.cs" />
     <Compile Include="Leasing.cs" />
-    <Compile Include="LeasingDBcontext.cs" />
+    <Compile Include="LeasingDBContext.cs" />
     <Compile Include="Medarbejder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Table.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -279,7 +278,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50964</DevelopmentServerPort>
+          <DevelopmentServerPort>54614</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50964/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

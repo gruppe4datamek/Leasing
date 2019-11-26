@@ -26,5 +26,10 @@ namespace Leasing.View
         {
             this.InitializeComponent();
         }
+
+        private void Kilometertal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

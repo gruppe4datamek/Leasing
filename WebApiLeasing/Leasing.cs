@@ -31,7 +31,7 @@ namespace WebApiLeasing
 
         public int Kunde_id { get; set; }
 
-        public int Bil_id { get; set; }
+        public int Nummerplade { get; set; }
 
         public int Medarbejder_id { get; set; }
 

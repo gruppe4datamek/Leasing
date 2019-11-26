@@ -5,20 +5,19 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class LeasingDBcontext : DbContext
+    public partial class LeasingDBContext : DbContext
     {
-        public LeasingDBcontext()
-            : base("name=LeasingDBcontext")
+        public LeasingDBContext()
+            : base("name=LeasingDBContext")
         {
             base.Configuration.LazyLoadingEnabled = false;
             base.Configuration.ProxyCreationEnabled = false;
         }
 
-        public virtual DbSet<Bil> Bil { get; set; }
-        public virtual DbSet<Kunde> Kunde { get; set; }
-        public virtual DbSet<Leasing> Leasing { get; set; }
-        public virtual DbSet<Medarbejder> Medarbejder { get; set; }
-        public virtual DbSet<Table> Table { get; set; }
+        public virtual DbSet<Bil> Bils { get; set; }
+        public virtual DbSet<Kunde> Kundes { get; set; }
+        public virtual DbSet<Leasing> Leasings { get; set; }
+        public virtual DbSet<Medarbejder> Medarbejders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,7 +38,7 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<Bil>()
-                .HasMany(e => e.Leasing)
+                .HasMany(e => e.Leasings)
                 .WithRequired(e => e.Bil)
                 .WillCascadeOnDelete(false);
 
@@ -56,7 +55,7 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<Kunde>()
-                .HasMany(e => e.Leasing)
+                .HasMany(e => e.Leasings)
                 .WithRequired(e => e.Kunde)
                 .WillCascadeOnDelete(false);
 
@@ -73,25 +72,9 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<Medarbejder>()
-                .HasMany(e => e.Leasing)
+                .HasMany(e => e.Leasings)
                 .WithRequired(e => e.Medarbejder)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Table>()
-                .Property(e => e.Mærke)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Table>()
-                .Property(e => e.Model)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Table>()
-                .Property(e => e.Årgang)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Table>()
-                .Property(e => e.Farve)
-                .IsUnicode(false);
         }
     }
 }

@@ -14,19 +14,19 @@ namespace WebApiLeasing.Controllers
 {
     public class BilsController : ApiController
     {
-        private LeasingDBcontext db = new LeasingDBcontext();
+        private LeasingDBContext db = new LeasingDBContext();
 
         // GET: api/Bils
-        public IQueryable<Bil> GetBil()
+        public IQueryable<Bil> GetBils()
         {
-            return db.Bil;
+            return db.Bils;
         }
 
         // GET: api/Bils/5
         [ResponseType(typeof(Bil))]
         public IHttpActionResult GetBil(int id)
         {
-            Bil bil = db.Bil.Find(id);
+            Bil bil = db.Bils.Find(id);
             if (bil == null)
             {
                 return NotFound();
@@ -44,7 +44,7 @@ namespace WebApiLeasing.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != bil.Bil_id)
+            if (id != bil.Nummerplade)
             {
                 return BadRequest();
             }
@@ -79,38 +79,23 @@ namespace WebApiLeasing.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Bil.Add(bil);
+            db.Bils.Add(bil);
+            db.SaveChanges();
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (BilExists(bil.Bil_id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtRoute("DefaultApi", new { id = bil.Bil_id }, bil);
+            return CreatedAtRoute("DefaultApi", new { id = bil.Nummerplade }, bil);
         }
 
         // DELETE: api/Bils/5
         [ResponseType(typeof(Bil))]
         public IHttpActionResult DeleteBil(int id)
         {
-            Bil bil = db.Bil.Find(id);
+            Bil bil = db.Bils.Find(id);
             if (bil == null)
             {
                 return NotFound();
             }
 
-            db.Bil.Remove(bil);
+            db.Bils.Remove(bil);
             db.SaveChanges();
 
             return Ok(bil);
@@ -127,7 +112,7 @@ namespace WebApiLeasing.Controllers
 
         private bool BilExists(int id)
         {
-            return db.Bil.Count(e => e.Bil_id == id) > 0;
+            return db.Bils.Count(e => e.Nummerplade == id) > 0;
         }
     }
 }
