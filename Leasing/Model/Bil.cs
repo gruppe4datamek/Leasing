@@ -9,29 +9,29 @@ namespace Leasing.Model
     public class Bil
     {
         //instance field
+        private int _nummerplade;
         private int _årgang;
         private string _model;
         private string _mærke;
         private int _kilometertal;
         private string _farve;
-        private string v;
+        private bool _tilgængelig;
 
         public Bil()
         {
         }
 
-        public Bil(string v)
-        {
-            this.v = v;
-        }
+       
 
-        public Bil(int årgang, string model, string mærke, int kilometertal, string farve)
+        public Bil(int nummerplade, int årgang, string model, string mærke, int kilometertal, string farve, bool tilgængelig)
         {
+            _nummerplade = nummerplade;
             _årgang = årgang;
             _model = model;
             _mærke = mærke;
             _kilometertal = kilometertal;
             _farve = farve;
+            _tilgængelig = tilgængelig;
         }
 
 
@@ -63,6 +63,18 @@ namespace Leasing.Model
         {
             get { return _farve; }
             set { _farve = value; }
+        }
+
+        public bool Tilgængelig
+        {
+            get { return _tilgængelig; }
+            set { _tilgængelig = value; }
+        }
+
+        public int Nummerplade
+        {
+            get { return _nummerplade; }
+            set { _nummerplade = value; }
         }
     }
 }

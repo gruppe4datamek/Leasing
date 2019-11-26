@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Leasing.Model;
+using Leasing.Persistency;
 
 namespace Leasing.Domain
 {
     class CarCatalogSingleton
     {
-        private List<Bil> _students;
+        private BilPersistency bp;
 
         public CarCatalogSingleton()
         {
-            _bils = new List<Bil>();
-            _bils.Add(new Bil("Toyota"));
-            _bils.Add(new Bil("BMW"));
+
+            bp = new BilPersistency();
         }
 
         private static CarCatalogSingleton _instance;
@@ -56,9 +56,9 @@ namespace Leasing.Domain
         }
 
 
-        public void addCar(Bil bil)
+        public async void addCar(Bil bil)
         {
-            _bils.Add(bil);
+            await bp.AddBilAsync(bil);
         }
 
     }

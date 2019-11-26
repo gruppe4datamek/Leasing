@@ -15,13 +15,13 @@ namespace Leasing.Persistency
 {
     class BilPersistency
     {
-        private const string ServerUrl = "http://localhost:50964";
+        private const string ServerUrl = "http://localhost:55492";
 
       
 
         public async Task AddBilAsync(Bil b)
         {
-            await GenericPersistency<Bil>.PostCar(ServerUrl, b); 
+            await WebApiBilAsync.PostItem(ServerUrl, b); 
         }
         
     }

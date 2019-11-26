@@ -1,4 +1,4 @@
-namespace WebApiLeasing
+namespace WebApiLeasing1
 {
     using System;
     using System.Collections.Generic;
@@ -6,11 +6,16 @@ namespace WebApiLeasing
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Table")]
-    public partial class Table
+    [Table("Bil")]
+    public partial class Bil
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Bil()
+        {
+            Leasings = new HashSet<Leasing>();
+        }
+
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Bil_id { get; set; }
 
         [StringLength(50)]
@@ -26,5 +31,10 @@ namespace WebApiLeasing
 
         [StringLength(30)]
         public string Farve { get; set; }
+
+        public int? Nummerplade { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Leasing> Leasings { get; set; }
     }
 }

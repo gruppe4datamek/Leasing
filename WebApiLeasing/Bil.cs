@@ -12,13 +12,11 @@ namespace WebApiLeasing
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Bil()
         {
-            Leasing = new HashSet<Leasing>();
-            Console.WriteLine("sffewff");
+            Leasings = new HashSet<Leasing>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Bil_id { get; set; }
+        public int Nummerplade { get; set; }
 
         [StringLength(50)]
         public string Mærke { get; set; }
@@ -35,6 +33,6 @@ namespace WebApiLeasing
         public string Farve { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Leasing> Leasing { get; set; }
+        public virtual ICollection<Leasing> Leasings { get; set; }
     }
 }

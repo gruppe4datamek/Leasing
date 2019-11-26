@@ -14,19 +14,19 @@ namespace WebApiLeasing.Controllers
 {
     public class LeasingsController : ApiController
     {
-        private LeasingDBcontext db = new LeasingDBcontext();
+        private LeasingDBContext db = new LeasingDBContext();
 
         // GET: api/Leasings
-        public IQueryable<Leasing> GetLeasing()
+        public IQueryable<Leasing> GetLeasings()
         {
-            return db.Leasing;
+            return db.Leasings;
         }
 
         // GET: api/Leasings/5
         [ResponseType(typeof(Leasing))]
         public IHttpActionResult GetLeasing(int id)
         {
-            Leasing leasing = db.Leasing.Find(id);
+            Leasing leasing = db.Leasings.Find(id);
             if (leasing == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace WebApiLeasing.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Leasing.Add(leasing);
+            db.Leasings.Add(leasing);
 
             try
             {
@@ -104,13 +104,13 @@ namespace WebApiLeasing.Controllers
         [ResponseType(typeof(Leasing))]
         public IHttpActionResult DeleteLeasing(int id)
         {
-            Leasing leasing = db.Leasing.Find(id);
+            Leasing leasing = db.Leasings.Find(id);
             if (leasing == null)
             {
                 return NotFound();
             }
 
-            db.Leasing.Remove(leasing);
+            db.Leasings.Remove(leasing);
             db.SaveChanges();
 
             return Ok(leasing);
@@ -127,7 +127,7 @@ namespace WebApiLeasing.Controllers
 
         private bool LeasingExists(int id)
         {
-            return db.Leasing.Count(e => e.Leasing_id == id) > 0;
+            return db.Leasings.Count(e => e.Leasing_id == id) > 0;
         }
     }
 }

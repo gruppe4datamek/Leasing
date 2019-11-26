@@ -14,19 +14,19 @@ namespace WebApiLeasing.Controllers
 {
     public class KundesController : ApiController
     {
-        private LeasingDBcontext db = new LeasingDBcontext();
+        private LeasingDBContext db = new LeasingDBContext();
 
         // GET: api/Kundes
-        public IQueryable<Kunde> GetKunde()
+        public IQueryable<Kunde> GetKundes()
         {
-            return db.Kunde;
+            return db.Kundes;
         }
 
         // GET: api/Kundes/5
         [ResponseType(typeof(Kunde))]
         public IHttpActionResult GetKunde(int id)
         {
-            Kunde kunde = db.Kunde.Find(id);
+            Kunde kunde = db.Kundes.Find(id);
             if (kunde == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace WebApiLeasing.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Kunde.Add(kunde);
+            db.Kundes.Add(kunde);
 
             try
             {
@@ -104,13 +104,13 @@ namespace WebApiLeasing.Controllers
         [ResponseType(typeof(Kunde))]
         public IHttpActionResult DeleteKunde(int id)
         {
-            Kunde kunde = db.Kunde.Find(id);
+            Kunde kunde = db.Kundes.Find(id);
             if (kunde == null)
             {
                 return NotFound();
             }
 
-            db.Kunde.Remove(kunde);
+            db.Kundes.Remove(kunde);
             db.SaveChanges();
 
             return Ok(kunde);
@@ -127,7 +127,7 @@ namespace WebApiLeasing.Controllers
 
         private bool KundeExists(int id)
         {
-            return db.Kunde.Count(e => e.Kunde_id == id) > 0;
+            return db.Kundes.Count(e => e.Kunde_id == id) > 0;
         }
     }
 }

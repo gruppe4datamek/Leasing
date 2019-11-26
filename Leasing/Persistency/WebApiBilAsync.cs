@@ -10,14 +10,14 @@ using Leasing.Model;
 
 namespace Leasing.Persistency
 {
-    class GenericPersistency<T>
+    class WebApiBilAsync
     {
-        public static List<T> GetCar(string url)
+        public static List<Bil> GetCar(string url)
         {
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
             using (var client = new HttpClient(handler))
             {
-                client.BaseAddress = new Uri(url);
+                //client.BaseAddress = url;
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
@@ -30,7 +30,7 @@ namespace Leasing.Persistency
                         return billist;
                     }
 
-                    return new List<T>();
+                    return new List<Bil>();
                 }
                 catch (Exception e)
                 {
@@ -40,22 +40,23 @@ namespace Leasing.Persistency
             }
         }
 
-        public static string ServerUrl { get; set; }
+        //public static string ServerUrl { get; set; }
 
 
-        public static async Task<string> PostCar(string url, T objectToPost)
+        public static async Task<string> PostItem(string url, Bil objectToPost)
         {
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
+            string serverUrl = url + "/" + "api" + "/" + "Bils";
             using (var client = new HttpClient(handler))
             {
-                client.BaseAddress = new Uri(url);
+               
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
                     var serializedString = JsonConvert.SerializeObject(objectToPost);
                     StringContent content = new StringContent(serializedString, Encoding.UTF8, "application/json");
-                    HttpResponseMessage responseMessage = await client.PostAsync(url, content);
+                    HttpResponseMessage responseMessage = await client.PostAsync(serverUrl, content);
 
                     if (responseMessage.IsSuccessStatusCode)
                         return await responseMessage.Content.ReadAsStringAsync();
