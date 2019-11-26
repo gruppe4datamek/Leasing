@@ -17,7 +17,7 @@ namespace WebApiLeasing1.Controllers
         private LeasingDBContext db = new LeasingDBContext();
 
         // GET: api/Bils
-        public IQueryable<Bil> GetBils()
+        public IEnumerable<Bil> GetBils()
         {
             return db.Bils;
         }
