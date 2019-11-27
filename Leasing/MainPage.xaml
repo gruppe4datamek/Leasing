@@ -20,48 +20,38 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="0,0,0,-665">
             <StackPanel Margin="0,0,0,0">
-                <TextBlock Height="160" Width="700" Margin="460,0,460,0" Text="Tilføj Biler" FontSize="125" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBlock>
+                <TextBlock Height="160" Width="700" Margin="0,0,0,0" Text="Tilføj Biler" FontSize="125" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBlock>
                 <TextBox x:Name="Nummerplade" Header="Nummerplade"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Nummerplade, Mode=TwoWay}"></TextBox>
                 <TextBox x:Name="Model" Header="Model"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Model, Mode=TwoWay}"></TextBox>
                 <TextBox x:Name="Mærke" Header="Mærke"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Mærke, Mode=TwoWay}"></TextBox>
                 <TextBox x:Name="Kilometertal" Header="Kilometertal"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Kilometertal, Mode=TwoWay}"></TextBox>
                 <TextBox x:Name="Farve" Header="Farve"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Farve, Mode=TwoWay}"></TextBox>
                 <TextBox x:Name="Årgang" Header="Årgang"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Årgang, Mode=TwoWay}"></TextBox>
-                <TextBox x:Name="Tilgængelig" Header="Tilgængelig"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Tilgængelig, Mode=TwoWay}"></TextBox>
+                <ComboBox x:Name="Tilgængelighed" IsEditable="False" Header="Tilgængelig" HorizontalAlignment="Center" Margin="0,0,0,0" Width="500" Height="75" ItemsSource="{Binding Tilgængelig, Mode=TwoWay}">
+                    
+                    <ComboBoxItem>True</ComboBoxItem>
+                    <ComboBoxItem >False</ComboBoxItem>
+                    
+                </ComboBox>
+               
 
 
 
                 <Button Command="{Binding AddCommand}" Name="AddButton" Height="35" Width="75" Margin="350,15,0,0" >
                     <TextBlock Text="Add" Margin="0,0,0,0" ></TextBlock>
                 </Button>
+                
             </StackPanel>
-
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Button Click="ListeAfbiler" Background="Transparent" Margin="0,0,0,0" Width="100" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Image Source="Assets/grå pil højre.png" Margin="0,0,0,0"  ></Image>
+            </Button>
+            </StackPanel>
 
         </StackPanel> 
         
-        <ListView ItemsSource="{Binding Bils}">
-            <ListView.ItemTemplate><DataTemplate>
-                <TextBlock>
-                    <Run Text="model" />
-                    <Run Text="{Binding Model}" />-
-                    <Run Text="Mærke" />
-                    <Run Text="{Binding Mærke}" />-
-                    <Run Text="Kilometertal" />
-                    <Run Text="{Binding Kilometertal}" />-
-                    <Run Text="Farve" />
-                    <Run Text="{Binding Farve}" />-
-                    <Run Text="Årgang" />
-                    <Run Text="{Binding Årgang}" />-
-                    <Run Text="Tilgængelig" />
-                    <Run Text="{Binding Tilgængelig}" />
-
-
-
-                    </TextBlock>
-            </DataTemplate></ListView.ItemTemplate>
-
-        </ListView>
-
+        
+       
 
 
 
