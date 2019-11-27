@@ -40,8 +40,9 @@
         </StackPanel>
         <ListView ItemsSource="{Binding Bils}">
             <ListView.ItemTemplate><DataTemplate>
-                <TextBlock Text="{Binding Model}"></TextBlock>
-            </DataTemplate></ListView.ItemTemplate>
+                    <TextBlock Text="{Binding Model}"></TextBlock>
+                </DataTemplate></ListView.ItemTemplate>
+
 
         </ListView>
 
