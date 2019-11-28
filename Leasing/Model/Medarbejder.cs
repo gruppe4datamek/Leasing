@@ -9,33 +9,29 @@ namespace Leasing.Model
     class Medarbejder
     {
         //instance field
-
-        private string _email;
+        private int _login;
         private string _navn;
-        private int _id;
-        
-        public Medarbejder(string email, string navn, int id)
+        private int _ID;
+        public Medarbejder(int login, string navn, int ID)
         {
-
+            _login = login;
             _navn = navn;
-            _id = id;
-            _email = email;
+            _ID = ID;
         }
-
-        public string Email
+        public int Login
         {
-            get { return _email;}
-            set { _email = value; }
+            get { return _login; }
+            set { _login = value; }
         }
         public string Navn
         {
             get { return _navn; }
             set { _navn = value; }
         }
-        public int id
+        public int ID
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return _ID; }
+            set { _ID = value; }
         }
 
     }

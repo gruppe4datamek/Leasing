@@ -16,5 +16,4 @@ namespace Leasing.Persistency
             await WebApiKundeAsync.PostItem(ServerUrl, k);
         }
     }
-
 }
