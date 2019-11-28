@@ -31,7 +31,7 @@ namespace Leasing.ViewModel
         private Bil _selected;
         public OpretBilViewModel()
         {
-            //_selected = new Bil();
+            //_selected = new Bil();h
             AddCommand = new RelayCommand(tilføjBil);
             singleton = new CarCatalogSingleton();
             Bils = new ObservableCollection<Bil>();
