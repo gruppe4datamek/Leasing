@@ -14,7 +14,7 @@ using Leasing.Persistency;
 namespace Leasing.ViewModel
 {
     class OpretKundeViewModel:INotifyPropertyChanged
-    {
+    { //F
         private string fornavn;
         private string efternavn;
         private int kundeid;
