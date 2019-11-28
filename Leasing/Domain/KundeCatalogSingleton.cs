@@ -44,7 +44,7 @@ namespace Leasing.Domain
                 _count = value;
             }
         }
-
+        // det er en kommentar
         public List<Kunde> KundeList
         {
             get { return _kundes; }

@@ -13,7 +13,7 @@ namespace Leasing.Persistency
     class WebApiMedarbejderAsync
     {
 
-        public static List<Medarbejder> GetMedarbejder(string url)
+        public static List<Medarbejder> GetMedarbejder(string url) 
         {
             HttpClientHandler handler = new HttpClientHandler() {UseDefaultCredentials = true};
             using (var client = new HttpClient(handler))
