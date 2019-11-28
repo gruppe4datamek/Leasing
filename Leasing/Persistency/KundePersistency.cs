@@ -10,4 +10,5 @@ namespace Leasing.Persistency
     {
         private const string ServerUrl = "http://localhost:55492";
     }
+
 }
