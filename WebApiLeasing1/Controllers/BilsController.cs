@@ -35,7 +35,7 @@ namespace WebApiLeasing1.Controllers
             return Ok(bil);
         }
 
-        // PUT: api/Bils/5
+        // PUT: api/Bils/5j
         [ResponseType(typeof(void))]
         public IHttpActionResult PutBil(int id, Bil bil)
         {
