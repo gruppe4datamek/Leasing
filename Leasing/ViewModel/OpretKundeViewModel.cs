@@ -17,7 +17,7 @@ namespace Leasing.ViewModel
     { //F
         private string fornavn;
         private string efternavn;
-        private int kundeid;
+        private int cprnummer;
         private string email;
 
         private KundeCatalogSingleton singleton;
@@ -40,7 +40,7 @@ namespace Leasing.ViewModel
         public void tilføjKunde()
         {
             
-            Kunde k1 = new Kunde(fornavn,efternavn,kundeid,email);
+            Kunde k1 = new Kunde(fornavn,efternavn,cprnummer,email);
             singleton.addKunde(k1);
 
             OnPropertyChanged(nameof(tilføjKunde));
@@ -56,10 +56,10 @@ namespace Leasing.ViewModel
             get { return efternavn; }
             set { efternavn = value; }
         }
-        public int KundeId
+        public int CPRNummer
         {
-            get { return kundeid; }
-            set { kundeid = value; }
+            get { return cprnummer; }
+            set { cprnummer = value; }
         }
         public string Email
         {

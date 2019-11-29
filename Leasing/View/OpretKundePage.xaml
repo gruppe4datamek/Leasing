@@ -26,7 +26,7 @@
                 <TextBox x:Name="fornavn" Header="Fornavn"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Fornavn, Mode=TwoWay}" />
                 <TextBox x:Name="Efternavn" Header="Efternavn"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Efternavn, Mode=TwoWay}" />
                 <TextBox x:Name="Email" Header="Email"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" />
-                <TextBox x:Name="KundeId" Header="KundeId"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding KundeId, Mode=TwoWay}" />
+                <TextBox x:Name="CPRNummer" Header="CPR Nummer"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding CPRNummer, Mode=TwoWay}" />
 
                 <Button Command="{Binding AddCommand}" Name="AddButton" Height="50" Width="100" Margin="350,15,0,0" >
                     <TextBlock Text="Add" Margin="0,0,0,0" />
