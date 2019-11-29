@@ -122,7 +122,7 @@ namespace Leasing.ViewModel
                 return null;
             }
         }
-    }C:\Users\franc\OneDrive\Dokumenter\GitHub\Leasing\Leasing\Model\Medarbejder.cs
+    }
 
    
 }
