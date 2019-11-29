@@ -26,8 +26,12 @@
                 <TextBox x:Name="Email" Header="Email"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" />
                 <TextBox x:Name="CPRNummer" Header="CPRNummer"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay}" />
 
-                <Button Command="{Binding AddCommand}" Name="AddButton" Height="35" Width="75" Margin="350,15,0,0" >
+                <Button Command="{Binding AddCommand}" Name="AddButton" Height="50" Width="100" Margin="350,15,0,0" >
                     <TextBlock Text="Add" Margin="0,0,0,0" />
+                </Button>
+
+                <Button Click="ListeAfMedarbejder"  Margin="750,-50,0,0" Width="100" Height="50">
+                    <TextBlock Text="Collection" ></TextBlock>
                 </Button>
 
             </StackPanel>
@@ -36,6 +40,26 @@
                     <Image Source="Assets/grå pil højre.png" Margin="0,0,0,0" />
                 </Button>
             </StackPanel>
+
+            <RelativePanel Margin="0,-605,0,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch">
+                <Button Name="HamburgerButton" Background="Goldenrod" FontFamily="Segoe MDL2 Assets" FontSize="50" Content="&#xE700;" Margin="10,129,0,0" Click="HamburgerButton_OnClick" HorizontalAlignment="Left" VerticalAlignment="Top"></Button>
+            </RelativePanel>
+
+            <SplitView Name="mySplitView" DisplayMode="Overlay" IsPaneOpen="False" OpenPaneLength="600" Opacity="0.7" Margin="0,-700,1000,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch" Height="125">
+                <SplitView.Pane>
+                    <StackPanel Margin="-150,0,0,0" Padding="20" Orientation="Horizontal" VerticalAlignment="Top" Height="200" Width="450" HorizontalAlignment="Stretch">
+                        <Button Click="Kunde_OnClick" Background="DarkGoldenrod" FontSize="15" Margin="0,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" >Kunde</Button>
+
+
+                        <Button Click="Biler_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,0,0,0" Width="150" >Biler</Button>
+
+
+                    </StackPanel>
+
+
+
+                </SplitView.Pane>
+            </SplitView>
 
         </StackPanel>
 

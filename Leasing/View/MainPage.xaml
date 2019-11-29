@@ -12,12 +12,15 @@
     <bvm:OpretBilViewModel></bvm:OpretBilViewModel>
 </Page.DataContext>
     <Grid>
-
+    
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
+        
+
         <StackPanel Margin="0,0,0,-665">
             <StackPanel Margin="0,0,0,0">
                 <TextBlock Height="160" Width="700" Margin="0,0,0,0" Text="Tilføj Biler" FontSize="125" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBlock>
@@ -33,29 +36,42 @@
                     <ComboBoxItem >False</ComboBoxItem>
                     
                 </ComboBox>
-               
+
+                <RelativePanel Margin="0,-675,0,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch">
+                    <Button Name="HamburgerButton" Background="Goldenrod" FontFamily="Segoe MDL2 Assets" FontSize="50" Content="&#xE700;" Margin="10,8,0,0" Click="HamburgerButton_OnClick" HorizontalAlignment="Left" VerticalAlignment="Top"></Button>
+                </RelativePanel>
+
+                <SplitView Name="mySplitView" DisplayMode="Overlay" IsPaneOpen="False" OpenPaneLength="350" Opacity="0.7" Margin="0,-900,1000,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch" Height="252">
+                    <SplitView.Pane>
+                        <StackPanel Margin="0,20,0,0" Padding="20" Orientation="Horizontal" VerticalAlignment="Top" Height="200" Width="450" HorizontalAlignment="Stretch">
+                            <Button Click="Medarbejder_OnClick" Background="DarkGoldenrod" FontSize="15" Margin="0,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" >Medarbejder</Button>
+
+
+                            <Button Click="Kunde_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,0,0,0" Width="150" >Kunde</Button>
+                            
+
+                        </StackPanel>
+                        
+
+
+                    </SplitView.Pane>
+                </SplitView>
 
 
 
-                <Button Command="{Binding AddCommand}" Name="AddButton" Height="35" Width="75" Margin="350,15,0,0" >
+                <Button Command="{Binding AddCommand}" Name="AddButton" Height="50" Width="100" Margin="350,15,0,0" >
                     <TextBlock Text="Add" Margin="0,0,0,0" ></TextBlock>
                 </Button>
                 
             </StackPanel>
             <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Button Click="ListeAfbiler" Background="Transparent" Margin="0,0,0,0" Width="100" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Image Source="Assets/grå pil højre.png" Margin="0,0,0,0"  ></Image>
-            </Button>
+                <Button Click="ListeAfbiler"  Margin="0,-50,350,0" Width="100" Height="50">
+                    <TextBlock Text="Collection" ></TextBlock>
+                </Button>
             </StackPanel>
 
         </StackPanel>
-        <ListView ItemsSource="{Binding Bils}">
-            <ListView.ItemTemplate><DataTemplate>
-                    <TextBlock Text="{Binding Model}"></TextBlock>
-                </DataTemplate></ListView.ItemTemplate>
-
-
-        </ListView>
+        
 
 
         </Grid> 
