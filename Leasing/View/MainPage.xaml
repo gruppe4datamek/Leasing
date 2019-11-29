@@ -48,7 +48,17 @@
             </Button>
             </StackPanel>
 
-        </StackPanel> 
+        </StackPanel>
+        <ListView ItemsSource="{Binding Bils}">
+            <ListView.ItemTemplate><DataTemplate>
+                    <TextBlock Text="{Binding Model}"></TextBlock>
+                </DataTemplate></ListView.ItemTemplate>
+
+
+        </ListView>
+
+
+        </Grid> 
         
         
        
@@ -56,5 +66,6 @@
 
 
 
-    </Grid>
-</Page>
+
+    </Page>
+
