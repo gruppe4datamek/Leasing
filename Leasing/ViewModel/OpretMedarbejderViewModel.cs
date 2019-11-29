@@ -21,7 +21,7 @@ namespace Leasing.ViewModel
 
         private string email;
         private string navn;
-        private int id;
+        private int cprnummer;
 
 
 
@@ -29,7 +29,7 @@ namespace Leasing.ViewModel
         public void tilføjMedarbejder()
         {
 
-            Medarbejder m1 = new Medarbejder(email, navn, id);
+            Medarbejder m1 = new Medarbejder(email, navn, cprnummer);
             singleton.addMedarbejder(m1);
 
             OnPropertyChanged(nameof(tilføjMedarbejder));
@@ -47,10 +47,10 @@ namespace Leasing.ViewModel
             set { navn = value; }
         }
 
-        public int ID
+        public int CPRNummer
         {
-            get { return id; }
-            set { id = value; }
+            get { return cprnummer; }
+            set { cprnummer = value; }
         }
 
         public ObservableCollection<Medarbejder> Medarbejders

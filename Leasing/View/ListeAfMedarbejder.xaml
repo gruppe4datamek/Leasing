@@ -30,7 +30,7 @@
                         <Run Text="Email" />
                         <Run Text="{Binding Email}"   Foreground="SlateGray"/>
                         <Run Text="Id" />
-                        <Run Text="{Binding id}" Foreground="SlateGray" />
+                        <Run Text="{Binding CPRNummer}" Foreground="SlateGray" />
                         
 
 

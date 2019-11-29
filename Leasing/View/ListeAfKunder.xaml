@@ -28,7 +28,7 @@
                         <Run Text="Efternavn" />
                         <Run Text="{Binding Efternavn}"   Foreground="SlateGray"/>
                         <Run Text="Kundeid" />
-                        <Run Text="{Binding KundeID}" Foreground="SlateGray" />
+                        <Run Text="{Binding CPRNummer}" Foreground="SlateGray" />
                         <Run Text="Email" />
                         <Run Text="{Binding Email}" Foreground="SlateGray" />
 

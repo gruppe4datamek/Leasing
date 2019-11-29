@@ -24,7 +24,7 @@
                 <TextBlock Height="160" Width="700" Margin="0,0,0,0" Text="Tilføj Medarbejder" FontSize="80" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 <TextBox x:Name="Navn" Header="Navn"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Navn, Mode=TwoWay}" />
                 <TextBox x:Name="Email" Header="Email"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" />
-                <TextBox x:Name="CPRNummer" Header="CPRNummer"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay}" />
+                <TextBox x:Name="CPRNummer" Header="CPRNummer"  Height="75" Width="500" Margin="0,0,0,0" TextWrapping="Wrap" Text="{Binding CPRNummer, Mode=TwoWay}" />
 
                 <Button Command="{Binding AddCommand}" Name="AddButton" Height="50" Width="100" Margin="350,15,0,0" >
                     <TextBlock Text="Add" Margin="0,0,0,0" />

@@ -11,14 +11,14 @@ namespace Leasing.Model
         //instance field
         private string _fornavn;
         private string _efternavn;
-        private int _kundeID;
+        private int _cprnummer;
         private string _email;
 
-        public Kunde(string fornavn, string efternavn, int kundeId, string email)
+        public Kunde(string fornavn, string efternavn, int cprnummer, string email)
         {
             _fornavn = fornavn;
             _efternavn = efternavn;
-            _kundeID = kundeId;
+            _cprnummer = cprnummer;
             _email = email;
         }
 
@@ -34,10 +34,10 @@ namespace Leasing.Model
             set { _efternavn = value; }
         }
 
-        public int KundeID
+        public int CPRNummer
         {
-            get { return _kundeID; }
-            set { _kundeID = value; }
+            get { return _cprnummer; }
+            set { _cprnummer= value; }
         }
         public string Email
         {
