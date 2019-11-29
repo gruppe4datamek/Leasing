@@ -123,10 +123,10 @@
     <Compile Include="Domain\CarCatalogSingleton.cs" />
     <Compile Include="Domain\KundeCatalogSingleton.cs" />
     <Compile Include="Domain\MedarbejderCatalogSingleton.cs" />
-    <Compile Include="ListeAfBiler.xaml.cs">
+    <Compile Include="View\ListeAfBiler.xaml.cs">
       <DependentUpon>ListeAfBiler.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Bil.cs" />
@@ -146,8 +146,11 @@
     <Compile Include="ViewModel\OpretBilViewModel.cs" />
     <Compile Include="ViewModel\OpretKundeViewModel.cs" />
     <Compile Include="ViewModel\OpretMedarbejderViewModel.cs" />
-    <Compile Include="View\OpretBilPage.xaml.cs">
-      <DependentUpon>OpretBilPage.xaml</DependentUpon>
+    <Compile Include="View\ListeAfMedarbejder.xaml.cs">
+      <DependentUpon>ListeAfMedarbejder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpretMedarbejderPage.xaml.cs">
+      <DependentUpon>OpretMedarbejderPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -174,15 +177,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ListeAfBiler.xaml">
+    <Page Include="View\ListeAfBiler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\OpretBilPage.xaml">
+    <Page Include="View\ListeAfMedarbejder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpretMedarbejderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

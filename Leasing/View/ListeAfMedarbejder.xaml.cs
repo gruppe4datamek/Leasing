@@ -20,16 +20,11 @@ namespace Leasing.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OpretBilPage : Page
+    public sealed partial class ListeAfMedarbejder : Page
     {
-        public OpretBilPage()
+        public ListeAfMedarbejder()
         {
             this.InitializeComponent();
-        }
-
-        private void Kilometertal_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
