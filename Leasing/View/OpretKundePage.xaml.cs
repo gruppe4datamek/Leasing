@@ -31,5 +31,20 @@ namespace Leasing.View
         {
             this.Frame.Navigate(typeof(ListeAfKunder));
         }
+
+        private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.mySplitView.IsPaneOpen = !this.mySplitView.IsPaneOpen;
+        }
+
+        private void Biler_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void Medarbejder_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OpretMedarbejderPage));
+        }
     }
 }
