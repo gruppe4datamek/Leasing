@@ -15,21 +15,16 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Leasing.View
+namespace Leasing
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OpretBilPage : Page
+    public sealed partial class ListeAfBilerXaml : Page
     {
-        public OpretBilPage()
+        public ListeAfBilerXaml()
         {
             this.InitializeComponent();
-        }
-
-        private void Kilometertal_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
