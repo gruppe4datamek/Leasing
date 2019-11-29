@@ -126,6 +126,9 @@
     <Compile Include="View\ListeAfBiler.xaml.cs">
       <DependentUpon>ListeAfBiler.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ListeAfKunder.xaml.cs">
+      <DependentUpon>ListeAfKunder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,9 @@
     <Compile Include="ViewModel\OpretMedarbejderViewModel.cs" />
     <Compile Include="View\ListeAfMedarbejder.xaml.cs">
       <DependentUpon>ListeAfMedarbejder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpretKundePage.xaml.cs">
+      <DependentUpon>OpretKundePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OpretMedarbejderPage.xaml.cs">
       <DependentUpon>OpretMedarbejderPage.xaml</DependentUpon>
@@ -181,11 +187,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ListeAfKunder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ListeAfMedarbejder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpretKundePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

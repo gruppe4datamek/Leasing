@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Leasing.View.ListeAfMedarbejder"
+    x:Class="Leasing.View.ListeAfKunder"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Leasing.View"
@@ -8,11 +8,9 @@
     xmlns:viewModel="using:Leasing.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Page.DataContext>
-        <viewModel:OpretMedarbejderViewModel></viewModel:OpretMedarbejderViewModel>
+        <viewModel:OpretKundeViewModel></viewModel:OpretKundeViewModel>
     </Page.DataContext>
-
     <Grid>
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
@@ -21,17 +19,19 @@
             </Button>
         </StackPanel>
 
-        <ListView ItemsSource="{Binding Medarbejders}" VerticalAlignment="Top" HorizontalAlignment="Left" >
+        <ListView ItemsSource="{Binding Kundes}" VerticalAlignment="Top" HorizontalAlignment="Left" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
-                        <Run Text = "Navn"    />
-                        <Run Text="{Binding Navn}" Foreground="SlateGray"  />
+                        <Run Text = "Fornavn"    />
+                        <Run Text="{Binding Fornavn}" Foreground="SlateGray"  />
+                        <Run Text="Efternavn" />
+                        <Run Text="{Binding Efternavn}"   Foreground="SlateGray"/>
+                        <Run Text="Kundeid" />
+                        <Run Text="{Binding KundeID}" Foreground="SlateGray" />
                         <Run Text="Email" />
-                        <Run Text="{Binding Email}"   Foreground="SlateGray"/>
-                        <Run Text="Id" />
-                        <Run Text="{Binding id}" Foreground="SlateGray" />
-                        
+                        <Run Text="{Binding Email}" Foreground="SlateGray" />
+
 
 
 

@@ -53,6 +53,11 @@ namespace Leasing.ViewModel
             set { id = value; }
         }
 
+        public ObservableCollection<Medarbejder> Medarbejders
+        {
+            get { return _medarbejder; }
+            set { _medarbejder = value; }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged

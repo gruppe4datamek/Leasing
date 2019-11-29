@@ -20,16 +20,16 @@ namespace Leasing.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ListeAfMedarbejder : Page
+    public sealed partial class OpretKundePage : Page
     {
-        public ListeAfMedarbejder()
+        public OpretKundePage()
         {
             this.InitializeComponent();
         }
 
-        public void MainPage(object sender, RoutedEventArgs e)
+        public void ListeAfKunder(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.Navigate(typeof(ListeAfKunder));
         }
     }
 }
