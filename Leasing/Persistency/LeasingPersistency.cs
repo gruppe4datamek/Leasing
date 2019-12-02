@@ -8,6 +8,6 @@ namespace Leasing.Persistency
 {
     class LeasingPersistency
     {
-        private const string ServerUrl = "http://localhost:55492";
+        private const string ServerUrl = "http://localhost:50171";
     }
 }

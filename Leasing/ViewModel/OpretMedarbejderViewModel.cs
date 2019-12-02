@@ -22,9 +22,20 @@ namespace Leasing.ViewModel
         private string email;
         private string navn;
         private int cprnummer;
+        
 
+        public OpretMedarbejderViewModel()
+        {
+            AddCommand = new RelayCommand(tilføjMedarbejder);
+            singleton = new MedarbejderCatalogSingleton();
+            Medarbejders = new ObservableCollection<Medarbejder>();
 
-
+            if (HentmeMedarbejder() != null)
+                foreach (Medarbejder k in HentmeMedarbejder())
+                {
+                    Medarbejders.Add(k);
+                }
+        }
         public RelayCommand AddCommand { get; set; }
         public void tilføjMedarbejder()
         {

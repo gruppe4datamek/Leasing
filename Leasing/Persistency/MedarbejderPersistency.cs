@@ -13,7 +13,7 @@ namespace Leasing.Persistency
         {
             await WebApiMedarbejderAsync.PostItem(ServerUrl, m);
         }
-        private const string ServerUrl = "http://localhost:55492";
+        private const string ServerUrl = "http://localhost:50171";
     }
 
 }

@@ -14,6 +14,11 @@ namespace Leasing.Model
         private string _navn;
         private int _cprnummer;
 
+        public Medarbejder()
+        {
+
+        }
+
         public Medarbejder(string email, string navn, int cprnummer)
         {
 
