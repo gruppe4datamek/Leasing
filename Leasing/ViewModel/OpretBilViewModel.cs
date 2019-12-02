@@ -1,5 +1,6 @@
 ﻿using Leasing.Common;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -34,13 +35,13 @@ namespace Leasing.ViewModel
             //_selected = new Bil();h
             AddCommand = new RelayCommand(tilføjBil);
             singleton = new CarCatalogSingleton();
-            Bils = new ObservableCollection<Bil>();
+            //Bils = new ObservableCollection<Bil>();
 
-            if(HentBiler() != null)
-                foreach(Bil b in HentBiler())
-                {
-                    Bils.Add(b);
-                }
+            //if(HentBiler() != null)
+            //    foreach(Bil b in HentBiler())
+            //    {
+            //        Bils.Add(b);
+            //    }
         }
        
 
@@ -92,7 +93,7 @@ namespace Leasing.ViewModel
 
         public ObservableCollection<Bil> Bils
         {
-            get { return _bils; }
+            get { return new ObservableCollection<Bil>( WebApiBilAsync.GetCar("api/Bils/")); }
             set { _bils = value; }
         }
 
@@ -104,24 +105,42 @@ namespace Leasing.ViewModel
             PropertyChanged?.Invoke(this, new
                 PropertyChangedEventArgs(propertyName));
         }
-        public IEnumerable<Bil> HentBiler()
-        {
-            try
-            {
-                var car = WebApiBilAsync.GetCar("api/Bils/");
-                //var carlist = JsonConvert.DeserializeObject<List<Bil>>("val");
-                //foreach (var m in carlist)
-                //{
-                //    Console.WriteLine(m);
-                //}3
-                return car;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Exception caught.", e);
-                return null;
-            }
-        }
+        //public IEnumerable<Bil> HentBiler()
+        //{
+        //    try
+        //    {
+        //        var car = WebApiBilAsync.GetCar("api/Bils/");
+        //        //var carlist = JsonConvert.DeserializeObject<List<Bil>>("val");
+        //        //foreach (var m in carlist)
+        //        //{
+        //        //    Console.WriteLine(m);
+        //        //}3
+        //        return car;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine("{0} Exception caught.", e);
+        //        return null;
+        //    }
+        //}
+        
+         
+         
+
+           
+        
+       
+
+
+       
+       
+       
+       
+        
+           
+        
+
+        
     }
 
    

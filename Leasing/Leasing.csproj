@@ -123,6 +123,13 @@
     <Compile Include="Domain\CarCatalogSingleton.cs" />
     <Compile Include="Domain\KundeCatalogSingleton.cs" />
     <Compile Include="Domain\MedarbejderCatalogSingleton.cs" />
+    <Compile Include="ViewModel\LeasingViewModel.cs" />
+    <Compile Include="View\CreateLeasing.xaml.cs">
+      <DependentUpon>CreateLeasing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LeasingPage.xaml.cs">
+      <DependentUpon>LeasingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ListeAfBiler.xaml.cs">
       <DependentUpon>ListeAfBiler.xaml</DependentUpon>
     </Compile>
@@ -183,6 +190,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\CreateLeasing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LeasingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ListeAfBiler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
