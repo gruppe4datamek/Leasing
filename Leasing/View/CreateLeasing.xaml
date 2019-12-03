@@ -9,9 +9,38 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
-        <lvm:OpretBilViewModel></lvm:OpretBilViewModel> 
+        <lvm:LeasingViewModel></lvm:LeasingViewModel>
     </Page.DataContext>
     <Grid>
+
+        <StackPanel>
+            <DatePicker Header="Date From"  Margin="350,350,0,200" SelectedDate="{Binding Datofra, Mode=TwoWay}" >
+
+            </DatePicker>
+
+            <DatePicker Header="Date To"  Margin="350,-150,0,200" SelectedDate="{Binding Datofra, Mode=TwoWay}" >
+
+            </DatePicker>
+
+            <Button Command="{Binding AddCommand}" Name="AddButton" Height="50" Width="100" Margin="200,0,0,0" >
+                <TextBlock Text="Add" Margin="0,0,0,0" ></TextBlock>
+            </Button>
+
+
+            <ComboBox Margin="350,-200,0,0" ItemsSource="{Binding BilIds, Mode=TwoWay}" Header="Bil" Width="100" >
+
+            </ComboBox>
+
+            <ComboBox Margin="350,-125,0,0" ItemsSource="{Binding MedarbejderIds, Mode=TwoWay}" Header="Medarbejder" Width="100" >
+
+            </ComboBox>
+
+            <ComboBox Margin="350,-50,0,0" ItemsSource="{Binding KundeIds, Mode=TwoWay}" Header="Kunde" Width="100" >
+
+            </ComboBox>
+
+            
+        </StackPanel>
 
     </Grid>
 </Page>

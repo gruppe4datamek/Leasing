@@ -16,11 +16,13 @@ namespace Leasing.ViewModel
     class LeasingViewModel : INotifyPropertyChanged
     {
         OpretBilViewModel obvm = new OpretBilViewModel();
+        OpretKundeViewModel okvm = new OpretKundeViewModel();
+        OpretMedarbejderViewModel omvm = new OpretMedarbejderViewModel();
         private int udlejningsId;
-        private DateTime datofra;
-        private DateTime datotil;
-        private string kontrakt;
-        
+        private DateTimeOffset datofra;
+        private DateTimeOffset datotil;
+
+
         //private leasingCatalogSingleton singleton;
         private ObservableCollection<Model.Leasing> _leasings;
         private Model.Leasing _selected;
@@ -30,7 +32,10 @@ namespace Leasing.ViewModel
             AddCommand = new RelayCommand(tilføjLeasing);
             //singleton = new CarCatalogSingleton();
             Leasings = new ObservableCollection<Model.Leasing>();
-            BilIds = new ObservableCollection<int>();
+            _bilIds = new ObservableCollection<int>();
+            _kundeIds = new ObservableCollection<int>();
+            _medarbejderIds = new ObservableCollection<int>();
+
             //if (HentLeasings() != null)
             //    foreach (Bil b in HentBiler())
             //    {
@@ -47,32 +52,27 @@ namespace Leasing.ViewModel
 
             OnPropertyChanged(nameof(tilføjLeasing));
         }
-        public string Kontrakt
-        {
-            get { return kontrakt; }
-            set { kontrakt = value; }
-        }
 
-        public DateTime Datofra
+        public DateTimeOffset Datofra
         {
             get { return datofra; }
-            set { datofra = value; }
+            set { datofra = value; OnPropertyChanged(nameof(datofra)); }
         }
-        public DateTime Datotil
+        public DateTimeOffset Datotil
         {
             get { return datotil; }
-            set { datotil = value; }
+            set { datotil = value; OnPropertyChanged(nameof(Datotil)); }
         }
         public int UdlejningsId
         {
             get { return udlejningsId; }
-            set { udlejningsId = value; }
+            set { udlejningsId = value; OnPropertyChanged(nameof(udlejningsId)); }
         }
        
         public ObservableCollection<Model.Leasing> Leasings
         {
             get { return _leasings; }
-            set { _leasings = value; }
+            set { _leasings = value; OnPropertyChanged(nameof(Leasings)); }
         }
 
         private ObservableCollection<int> _bilIds;
@@ -91,6 +91,41 @@ namespace Leasing.ViewModel
                 return BilIdList;
             }
             set { _bilIds = value; }
+        }
+        private ObservableCollection<int> _kundeIds;
+        public ObservableCollection<int> KundeIds
+        {
+            get
+            {
+                ObservableCollection<Kunde> mylist = okvm.Kundes;
+                ObservableCollection<int> KundeIdList = new ObservableCollection<int>();
+                foreach (var Kunde in mylist)
+                {
+                    KundeIdList.Add(Kunde.CPRNummer);
+
+                }
+
+                return KundeIdList;
+            }
+            set { _kundeIds = value; }
+        }
+
+        private ObservableCollection<int> _medarbejderIds;
+        public ObservableCollection<int> MedarbejderIds
+        {
+            get
+            {
+                ObservableCollection<Medarbejder> mylist = omvm.Medarbejders;
+                ObservableCollection<int> MedarbejderIdList = new ObservableCollection<int>();
+                foreach (var Medarbejder in mylist)
+                {
+                    MedarbejderIdList.Add(Medarbejder.CPRNummer);
+
+                }
+
+                return MedarbejderIdList;
+            }
+            set { _medarbejderIds = value; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
