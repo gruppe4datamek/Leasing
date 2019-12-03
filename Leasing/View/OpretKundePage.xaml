@@ -46,13 +46,14 @@
                 <Button Name="HamburgerButton" Background="Goldenrod" FontFamily="Segoe MDL2 Assets" FontSize="50" Content="&#xE700;" Margin="10,129,0,0" Click="HamburgerButton_OnClick" HorizontalAlignment="Left" VerticalAlignment="Top"></Button>
             </RelativePanel>
 
-            <SplitView Name="mySplitView" DisplayMode="Overlay" IsPaneOpen="False" OpenPaneLength="600" Opacity="0.7" Margin="0,-700,1000,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch" Height="125">
+            <SplitView Name="mySplitView" DisplayMode="Overlay" IsPaneOpen="False" OpenPaneLength="600" Opacity="0.7" Margin="0,-700,1000,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch" Height="250">
                 <SplitView.Pane>
-                    <StackPanel Margin="-150,0,0,0" Padding="20" Orientation="Horizontal" VerticalAlignment="Top" Height="200" Width="450" HorizontalAlignment="Stretch">
+                    <StackPanel Margin="-150,0,0,0" Padding="20" Orientation="Horizontal" VerticalAlignment="Top" Height="300" Width="450" HorizontalAlignment="Stretch">
                         <Button Click="Medarbejder_OnClick" Background="DarkGoldenrod" FontSize="15" Margin="0,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" >Medarbejder</Button>
 
+                        <Button Click="Biler_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,-100,0,0" Width="150" >Biler</Button>
 
-                        <Button Click="Biler_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,0,0,0" Width="150" >Biler</Button>
+                        <Button Click="Leasing_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,25,0,0" Width="150" >Leasing</Button>
 
 
                     </StackPanel>

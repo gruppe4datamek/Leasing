@@ -26,7 +26,7 @@ namespace Leasing
         {
             this.InitializeComponent();
         }
-        public void MainPage(object sender, RoutedEventArgs e)
+        public void Biler_onclick(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
         }

@@ -27,9 +27,9 @@ namespace Leasing.View
             this.InitializeComponent();
         }
 
-        public void MainPage(object sender, RoutedEventArgs e)
+        public void Medarbejder_onclick(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.Navigate(typeof(OpretMedarbejderPage));
         }
     }
 }

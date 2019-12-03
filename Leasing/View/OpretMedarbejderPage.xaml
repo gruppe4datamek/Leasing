@@ -35,21 +35,18 @@
                 </Button>
 
             </StackPanel>
-            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Button Click="ListeAfMedarbejder" Background="Transparent" Margin="0,0,0,0" Width="100" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                    <Image Source="Assets/grå pil højre.png" Margin="0,0,0,0" />
-                </Button>
-            </StackPanel>
+           
 
             <RelativePanel Margin="0,-605,0,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch">
-                <Button Name="HamburgerButton" Background="Goldenrod" FontFamily="Segoe MDL2 Assets" FontSize="50" Content="&#xE700;" Margin="10,129,0,0" Click="HamburgerButton_OnClick" HorizontalAlignment="Left" VerticalAlignment="Top"></Button>
+                <Button Name="HamburgerButton" Background="Goldenrod" FontFamily="Segoe MDL2 Assets" FontSize="50" Content="&#xE700;" Margin="10,175,0,0" Click="HamburgerButton_OnClick" HorizontalAlignment="Left" VerticalAlignment="Top"></Button>
             </RelativePanel>
 
-            <SplitView Name="mySplitView" DisplayMode="Overlay" IsPaneOpen="False" OpenPaneLength="600" Opacity="0.7" Margin="0,-700,1000,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch" Height="125">
+            <SplitView Name="mySplitView" DisplayMode="Overlay" IsPaneOpen="False" OpenPaneLength="600" Opacity="0.7" Margin="0,-450,1000,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch" Height="200">
                 <SplitView.Pane>
                     <StackPanel Margin="-150,0,0,0" Padding="20" Orientation="Horizontal" VerticalAlignment="Top" Height="200" Width="450" HorizontalAlignment="Stretch">
                         <Button Click="Kunde_OnClick" Background="DarkGoldenrod" FontSize="15" Margin="0,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" >Kunde</Button>
 
+                        <Button Click="Leasing_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,125,0,0" Width="150" >Leasing</Button>
 
                         <Button Click="Biler_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,0,0,0" Width="150" >Biler</Button>
 

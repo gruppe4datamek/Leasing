@@ -91,11 +91,11 @@ namespace Leasing.ViewModel
             set { tilgængelig = value; }
         }
 
-        public ObservableCollection<Bil> Bils
-        {
-            get { return new ObservableCollection<Bil>( WebApiBilAsync.GetCar("api/Bils/")); }
-            set { _bils = value; }
-        }
+        //public ObservableCollection<Bil> Bils
+        //{
+        //    get { return new ObservableCollection<Bil>(WebApiBilAsync.GetCar("api/Bils/")); }
+        //    set { _bils = value; }
+        //}
 
 
         public event PropertyChangedEventHandler PropertyChanged;

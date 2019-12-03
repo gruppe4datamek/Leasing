@@ -46,5 +46,9 @@ namespace Leasing
         {
             this.Frame.Navigate(typeof(OpretMedarbejderPage));
         }
+        private void Leasing_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateLeasing));
+        }
     }
 }

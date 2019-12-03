@@ -18,10 +18,15 @@ namespace Leasing.ViewModel
         OpretBilViewModel obvm = new OpretBilViewModel();
         OpretKundeViewModel okvm = new OpretKundeViewModel();
         OpretMedarbejderViewModel omvm = new OpretMedarbejderViewModel();
+        private ObservableCollection<bool> _serviceAftale;
         private int udlejningsId;
         private DateTimeOffset datofra;
         private DateTimeOffset datotil;
-
+        private int maxKilometerTal;
+        private string addresse;
+        private int mCPRNummer;
+        private int kCPRNummer;
+        private int nummerplade;
 
         //private leasingCatalogSingleton singleton;
         private ObservableCollection<Model.Leasing> _leasings;
@@ -35,7 +40,9 @@ namespace Leasing.ViewModel
             _bilIds = new ObservableCollection<int>();
             _kundeIds = new ObservableCollection<int>();
             _medarbejderIds = new ObservableCollection<int>();
-
+            _serviceAftale = new ObservableCollection<bool>();
+            _serviceAftale.Add(true);
+            _serviceAftale.Add(false);
             //if (HentLeasings() != null)
             //    foreach (Bil b in HentBiler())
             //    {
@@ -53,6 +60,35 @@ namespace Leasing.ViewModel
             OnPropertyChanged(nameof(tilføjLeasing));
         }
 
+        public int MCPRNummer
+        {
+            get { return mCPRNummer;}
+            set {mCPRNummer= value; }
+        }
+
+        public int KCPRNummer
+        {
+            get { return kCPRNummer;}
+            set { kCPRNummer = value; }
+        }
+
+        public int Nummerplade
+        {
+            get { return nummerplade; }
+            set { nummerplade = value; }
+        }
+        public int MaxKilometerTal
+        {
+            get { return maxKilometerTal; }
+            set { maxKilometerTal = value; }
+        }
+
+        public string Addresse
+        {
+            get { return addresse; }
+            set { addresse = value; }
+        }
+
         public DateTimeOffset Datofra
         {
             get { return datofra; }
@@ -68,7 +104,13 @@ namespace Leasing.ViewModel
             get { return udlejningsId; }
             set { udlejningsId = value; OnPropertyChanged(nameof(udlejningsId)); }
         }
-       
+
+        public ObservableCollection<bool> ServiceAftale
+        {
+            get { return _serviceAftale; }
+            set { _serviceAftale = value; OnPropertyChanged(nameof(ServiceAftale)); }
+        }
+
         public ObservableCollection<Model.Leasing> Leasings
         {
             get { return _leasings; }
@@ -76,22 +118,22 @@ namespace Leasing.ViewModel
         }
 
         private ObservableCollection<int> _bilIds;
-        public ObservableCollection<int> BilIds
-        {
-            get
-            {
-               ObservableCollection<Bil> mylist = obvm.Bils; 
-                ObservableCollection<int> BilIdList = new ObservableCollection<int>();
-                foreach (var bil in mylist)
-                {
-                   BilIdList.Add(bil.Nummerplade);
+        //public ObservableCollection<int> BilIds
+        //{
+        //    get
+        //    {
+        //        ObservableCollection<Bil> mylist = obvm.Bils;
+        //        ObservableCollection<int> BilIdList = new ObservableCollection<int>();
+        //        foreach (var bil in mylist)
+        //        {
+        //            BilIdList.Add(bil.Nummerplade);
 
-                }
+        //        }
 
-                return BilIdList;
-            }
-            set { _bilIds = value; }
-        }
+        //        return BilIdList;
+        //    }
+        //    set { _bilIds = value; }
+        //}
         private ObservableCollection<int> _kundeIds;
         public ObservableCollection<int> KundeIds
         {

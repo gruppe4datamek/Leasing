@@ -127,14 +127,14 @@
     <Compile Include="View\CreateLeasing.xaml.cs">
       <DependentUpon>CreateLeasing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LeasingPage.xaml.cs">
-      <DependentUpon>LeasingPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ListeAfBiler.xaml.cs">
       <DependentUpon>ListeAfBiler.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListeAfKunder.xaml.cs">
       <DependentUpon>ListeAfKunder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListeAfLeasinger.xaml.cs">
+      <DependentUpon>ListeAfLeasinger.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -194,15 +194,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\LeasingPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\ListeAfBiler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ListeAfKunder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListeAfLeasinger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

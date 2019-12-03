@@ -46,6 +46,7 @@
                         <StackPanel Margin="0,20,0,0" Padding="20" Orientation="Horizontal" VerticalAlignment="Top" Height="200" Width="450" HorizontalAlignment="Stretch">
                             <Button Click="Medarbejder_OnClick" Background="DarkGoldenrod" FontSize="15" Margin="0,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" >Medarbejder</Button>
 
+                            <Button Click="Leasing_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,125,0,0" Width="150" >Leasing</Button>
 
                             <Button Click="Kunde_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,0,0,0" Width="150" >Kunde</Button>
                             

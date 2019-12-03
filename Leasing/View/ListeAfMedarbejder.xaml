@@ -15,10 +15,11 @@
 
     <Grid>
 
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Button Click="MainPage" Background="Transparent" Margin="0,0,0,0" Width="100" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                <Image Source="Assets/grå pil venstre1.png" Margin="0,0,0,0"  ></Image>
+        <StackPanel Margin="0,0,0,0">
+            <Button Click="Medarbejder_onclick" Margin="50,850,0,0" Width="150" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Tilbage" FontSize="25" >
+
             </Button>
+
         </StackPanel>
 
         <ListView ItemsSource="{Binding Medarbejders}" VerticalAlignment="Top" HorizontalAlignment="Left" >
