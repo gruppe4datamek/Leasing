@@ -28,6 +28,7 @@ namespace Leasing.ViewModel
         private int mCPRNummer;
         private int kCPRNummer;
         private int nummerplade;
+        private bool serviceAftale;
 
         private LeasingCatalogSingleton singleton;
         private ObservableCollection<Leasing1> _leasings;
@@ -55,11 +56,16 @@ namespace Leasing.ViewModel
         public RelayCommand AddCommand { get; set; }
         public void tilføjLeasing()
         {
-
-            int sa = Int32.Parse(ServiceAftale);
-            Leasing1 k1 = new Leasing1(udlejningsId, datofra, datotil, maxKilometerTal, addresse, sa);
+     
+            Leasing1 k1 = new Leasing1(udlejningsId, datofra, datotil, maxKilometerTal, addresse, ServiceAftale);
             singleton.addleasing(k1);
             OnPropertyChanged(nameof(tilføjLeasing));
+        }
+
+        public bool ServiceAftale
+        {
+            get { return serviceAftale; }
+            set { serviceAftale = value; }
         }
 
         public int MCPRNummer
@@ -107,11 +113,6 @@ namespace Leasing.ViewModel
             set { udlejningsId = value; OnPropertyChanged(nameof(udlejningsId)); }
         }
 
-        public ObservableCollection<bool> ServiceAftale
-        {
-            get { return _serviceAftale; }
-            set { _serviceAftale = value; OnPropertyChanged(nameof(ServiceAftale)); }
-        }
 
         public ObservableCollection<Model.Leasing1> Leasings
         {
