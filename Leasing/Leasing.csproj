@@ -122,8 +122,10 @@
     <Compile Include="Common\Relaycommand.cs" />
     <Compile Include="Domain\CarCatalogSingleton.cs" />
     <Compile Include="Domain\KundeCatalogSingleton.cs" />
+    <Compile Include="Domain\LeasingCatalogSingleton.cs" />
     <Compile Include="Domain\MedarbejderCatalogSingleton.cs" />
-    <Compile Include="ViewModel\LeasingViewModel.cs" />
+    <Compile Include="Persistency\WebApiLeasingAsync.cs" />
+    <Compile Include="ViewModel\OpretLeasingViewModel.cs" />
     <Compile Include="View\CreateLeasing.xaml.cs">
       <DependentUpon>CreateLeasing.xaml</DependentUpon>
     </Compile>
@@ -141,7 +143,7 @@
     </Compile>
     <Compile Include="Model\Bil.cs" />
     <Compile Include="Model\Kunde.cs" />
-    <Compile Include="Model\Leasing.cs" />
+    <Compile Include="Model\Leasing1.cs" />
     <Compile Include="Model\Medarbejder.cs" />
     <Compile Include="Persistency\BilPersistency.cs" />
     <Compile Include="Persistency\MedarbejderPersistency.cs" />

@@ -11,52 +11,54 @@ using Leasing.Domain;
 using Leasing.Model;
 using Leasing.Persistency;
 
+
 namespace Leasing.ViewModel
 {
-    class LeasingViewModel : INotifyPropertyChanged
+    class OpretLeasingViewModel : INotifyPropertyChanged
     {
         OpretBilViewModel obvm = new OpretBilViewModel();
         OpretKundeViewModel okvm = new OpretKundeViewModel();
         OpretMedarbejderViewModel omvm = new OpretMedarbejderViewModel();
         private ObservableCollection<bool> _serviceAftale;
         private int udlejningsId;
-        private DateTimeOffset datofra;
-        private DateTimeOffset datotil;
+        private int datofra;
+        private int datotil;
         private int maxKilometerTal;
         private string addresse;
         private int mCPRNummer;
         private int kCPRNummer;
         private int nummerplade;
 
-        //private leasingCatalogSingleton singleton;
-        private ObservableCollection<Model.Leasing> _leasings;
-        private Model.Leasing _selected;
-        public LeasingViewModel()
+        private LeasingCatalogSingleton singleton;
+        private ObservableCollection<Leasing1> _leasings;
+        private Leasing1 _selected;
+        public OpretLeasingViewModel()
         {
             //_selected = new Bil();h
             AddCommand = new RelayCommand(tilføjLeasing);
-            //singleton = new CarCatalogSingleton();
-            Leasings = new ObservableCollection<Model.Leasing>();
+            singleton = new LeasingCatalogSingleton();
+            Leasings = new ObservableCollection<Leasing1>();
             _bilIds = new ObservableCollection<int>();
             _kundeIds = new ObservableCollection<int>();
             _medarbejderIds = new ObservableCollection<int>();
             _serviceAftale = new ObservableCollection<bool>();
             _serviceAftale.Add(true);
             _serviceAftale.Add(false);
-            //if (HentLeasings() != null)
-            //    foreach (Bil b in HentBiler())
-            //    {
-            //        Bils.Add(b);
-            //    }
+            if (HentLeasings() != null)
+                foreach (Leasing1 l in HentLeasings())
+                {
+                    Leasings.Add(l);
+                }
         }
 
 
         public RelayCommand AddCommand { get; set; }
         public void tilføjLeasing()
         {
-          
-            //singleton.addCar(b1);
 
+            int sa = Int32.Parse(ServiceAftale);
+            Leasing1 k1 = new Leasing1(udlejningsId, datofra, datotil, maxKilometerTal, addresse, sa);
+            singleton.addleasing(k1);
             OnPropertyChanged(nameof(tilføjLeasing));
         }
 
@@ -89,12 +91,12 @@ namespace Leasing.ViewModel
             set { addresse = value; }
         }
 
-        public DateTimeOffset Datofra
+        public int Datofra
         {
             get { return datofra; }
             set { datofra = value; OnPropertyChanged(nameof(datofra)); }
         }
-        public DateTimeOffset Datotil
+        public int Datotil
         {
             get { return datotil; }
             set { datotil = value; OnPropertyChanged(nameof(Datotil)); }
@@ -111,7 +113,7 @@ namespace Leasing.ViewModel
             set { _serviceAftale = value; OnPropertyChanged(nameof(ServiceAftale)); }
         }
 
-        public ObservableCollection<Model.Leasing> Leasings
+        public ObservableCollection<Model.Leasing1> Leasings
         {
             get { return _leasings; }
             set { _leasings = value; OnPropertyChanged(nameof(Leasings)); }
@@ -177,24 +179,24 @@ namespace Leasing.ViewModel
             PropertyChanged?.Invoke(this, new
                 PropertyChangedEventArgs(propertyName));
         }
-        //public IEnumerable<Model.Leasing> HentLeasings()
-        //{
-        //    try
-        //    {
-        //        var leasing = WebApiBilAsync.GetCar("api/Leasings/");
-        //        //var carlist = JsonConvert.DeserializeObject<List<Bil>>("val");
-        //        //foreach (var m in carlist)
-        //        //{
-        //        //    Console.WriteLine(m);
-        //        //}3
-        //        return leasing;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine("{0} Exception caught.", e);
-        //        return null;
-        //    }
-        //}
+        public IEnumerable<Leasing1> HentLeasings()
+        {
+            try
+            {
+                var leasing = WebApiLeasingAsync.GetLeasing("api/Leasings/");
+                //        //var carlist = JsonConvert.DeserializeObject<List<Bil>>("val");
+                //        //foreach (var m in carlist)
+                //        //{
+                //        //    Console.WriteLine(m);
+                //        //}3
+                return leasing;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+                return null;
+            }
+        }
 
     }
 }

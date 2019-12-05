@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Leasing.Model
 {
-    class Leasing
+    class Leasing1
     {
         //instance field
         private int _udlejningsId;
@@ -18,12 +19,17 @@ namespace Leasing.Model
         private int mCPRNummer;
         private int kCPRNummer;
         private int nummerplade;
-        public Leasing(int udlejningsId, int datoFra, int datoTil, int maxKilometer, string addresse, bool serviceAftale)
+       
+        private ObservableCollection<bool> serviceAftale;
+
+        
+
+        public Leasing1(int udlejningsId, int datofra, int datotil, int maxKilometerTal, string addresse, bool serviceAftale)
         {
             _udlejningsId = udlejningsId;
-            _datoFra = datoFra;
-            _DatoTil = datoTil;
-            _maxKilometerTal = maxKilometer;
+            _datoFra = datofra;
+            _DatoTil = datotil;
+            _maxKilometerTal = maxKilometerTal;
             _addresse = addresse;
             _serviceAftale = serviceAftale;
         }
