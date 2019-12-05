@@ -21,7 +21,7 @@
 
         </StackPanel>
 
-        <ListView ItemsSource="{Binding Bils}" VerticalAlignment="Top" HorizontalAlignment="Left" >
+        <ListView ItemsSource="{Binding Bils }" VerticalAlignment="Top" HorizontalAlignment="Left" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>

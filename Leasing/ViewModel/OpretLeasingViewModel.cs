@@ -118,22 +118,22 @@ namespace Leasing.ViewModel
         }
 
         private ObservableCollection<int> _bilIds;
-        //public ObservableCollection<int> BilIds
-        //{
-        //    get
-        //    {
-        //        ObservableCollection<Bil> mylist = obvm.Bils;
-        //        ObservableCollection<int> BilIdList = new ObservableCollection<int>();
-        //        foreach (var bil in mylist)
-        //        {
-        //            BilIdList.Add(bil.Nummerplade);
+        public ObservableCollection<int> BilIds
+        {
+            get
+            {
+                ObservableCollection<Bil> mylist = obvm.Bils;
+                ObservableCollection<int> BilIdList = new ObservableCollection<int>();
+                foreach (var bil in mylist)
+                {
+                    BilIdList.Add(bil.Nummerplade);
 
-        //        }
+                }
 
-        //        return BilIdList;
-        //    }
-        //    set { _bilIds = value; }
-        //}
+                return BilIdList;
+            }
+            set { _bilIds = value; }
+        }
         private ObservableCollection<int> _kundeIds;
         public ObservableCollection<int> KundeIds
         {
