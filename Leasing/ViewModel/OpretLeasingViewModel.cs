@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Store.Preview.InstallControl;
 using Leasing.Common;
 using Leasing.Domain;
 using Leasing.Model;
@@ -19,7 +20,7 @@ namespace Leasing.ViewModel
         OpretBilViewModel obvm = new OpretBilViewModel();
         OpretKundeViewModel okvm = new OpretKundeViewModel();
         OpretMedarbejderViewModel omvm = new OpretMedarbejderViewModel();
-        private ObservableCollection<bool> _serviceAftale;
+        private ObservableCollection<string> _serviceAftale;
         private int udlejningsId;
         private int datofra;
         private int datotil;
@@ -42,9 +43,9 @@ namespace Leasing.ViewModel
             _bilIds = new ObservableCollection<int>();
             _kundeIds = new ObservableCollection<int>();
             _medarbejderIds = new ObservableCollection<int>();
-            _serviceAftale = new ObservableCollection<bool>();
-            _serviceAftale.Add(true);
-            _serviceAftale.Add(false);
+            _serviceAftale = new ObservableCollection<string>();
+            _serviceAftale.Add("true");
+            _serviceAftale.Add("false");
             if (HentLeasings() != null)
                 foreach (Leasing1 l in HentLeasings())
                 {
@@ -57,7 +58,7 @@ namespace Leasing.ViewModel
         public void tilføjLeasing()
         {
             
-            Leasing1 k1 = new Leasing1(udlejningsId, datofra, datotil, maxKilometerTal, addresse, SelectedServiceAftale);
+            Leasing1 k1 = new Leasing1(udlejningsId, datofra, datotil, maxKilometerTal, addresse, bool.Parse(SelectedServiceAftale) );
             singleton.addleasing(k1);
             OnPropertyChanged(nameof(tilføjLeasing));
         }
@@ -119,7 +120,7 @@ namespace Leasing.ViewModel
 
 
        
-        public ObservableCollection<bool> ServiceAftale
+        public ObservableCollection<string> ServiceAftale
         {
             get
             {
@@ -127,13 +128,38 @@ namespace Leasing.ViewModel
 
                 
             }
-            set { _serviceAftale = value; }
+            set { _serviceAftale = value; OnPropertyChanged(nameof(ServiceAftale)); }
+            
+        }
+
+        private int _selectednummerPlade;
+
+        public int SelectedNummerPlade
+        {
+            get { return _selectednummerPlade;}
+            set { _selectednummerPlade = value; OnPropertyChanged(nameof(SelectedNummerPlade)); }
+        }
+
+        private int _selectedMCPRnummer;
+
+        public int SelectedMCPRNummer
+        {
+            get { return _selectedMCPRnummer; }
+            set { _selectedMCPRnummer = value; OnPropertyChanged(nameof(SelectedMCPRNummer)); }
+        }
+
+        private int _selectedKCPRnummer;
+
+        public int SelectedKCPRNummer
+        {
+            get { return _selectedKCPRnummer; }
+            set { _selectedKCPRnummer = value; OnPropertyChanged(nameof(SelectedKCPRNummer)); }
         }
 
 
 
-        private bool _selectedServiceAftale;
-        public bool  SelectedServiceAftale
+        private string _selectedServiceAftale;
+        public string  SelectedServiceAftale
         {
             get { return _selectedServiceAftale; }
             set { _selectedServiceAftale = value;

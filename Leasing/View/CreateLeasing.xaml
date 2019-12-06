@@ -45,7 +45,7 @@
           
             </ComboBox>
 
-            <ComboBox Margin="500,-250,0,0" ItemsSource="{Binding ServiceAftale}" SelectedItem="{Binding SelectedServiceAftale ,Mode=TwoWay}"  Header="ServiceAftale" Width="100" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" >
+            <ComboBox Margin="500,-250,0,0" ItemsSource="{Binding ServiceAftale}" SelectedValue="{Binding SelectedServiceAftale ,Mode=TwoWay}"  Header="ServiceAftale" Width="100" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" >
 
             </ComboBox>
 
