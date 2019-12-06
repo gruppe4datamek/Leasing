@@ -11,8 +11,8 @@ namespace Leasing.Model
     {
         //instance field
         private int _udlejningsId;
-        private int _datoFra;
-        private int _DatoTil;
+        private DateTimeOffset _datoFra;
+        private DateTimeOffset _DatoTil;
         private int _maxKilometerTal;
         private string _addresse;
         private bool _serviceAftale;
@@ -24,7 +24,7 @@ namespace Leasing.Model
 
         
 
-        public Leasing1(int udlejningsId, int datofra, int datotil, int maxKilometerTal, string addresse, bool serviceAftale)
+        public Leasing1(int udlejningsId, DateTimeOffset datofra, DateTimeOffset datotil, int maxKilometerTal, string addresse, bool serviceAftale)
         {
             _udlejningsId = udlejningsId;
             _datoFra = datofra;
@@ -71,12 +71,12 @@ namespace Leasing.Model
             get { return _udlejningsId; }
             set { _udlejningsId = value; }
         }
-        public int DatoFra
+        public DateTimeOffset DatoFra
         {
             get { return _datoFra; }
             set { _datoFra = value; }
         }
-        public int DatoTil
+        public DateTimeOffset DatoTil
         {
             get { return _DatoTil; }
             set { _DatoTil = value; }

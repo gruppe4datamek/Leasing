@@ -21,8 +21,8 @@ namespace Leasing.ViewModel
         OpretMedarbejderViewModel omvm = new OpretMedarbejderViewModel();
         private ObservableCollection<bool> _serviceAftale;
         private int udlejningsId;
-        private int datofra;
-        private int datotil;
+        private DateTimeOffset datofra;
+        private DateTimeOffset datotil;
         private int maxKilometerTal;
         private string addresse;
         private int mCPRNummer;
@@ -51,6 +51,12 @@ namespace Leasing.ViewModel
                     Leasings.Add(l);
                 }
         }
+
+        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date, TimeSpan time)
+        {
+            return new DateTime(date.Year, date.Month, date.Day, time.Hours, time.Minutes, 0);
+        }
+
 
 
         public RelayCommand AddCommand { get; set; }
@@ -97,12 +103,12 @@ namespace Leasing.ViewModel
             set { addresse = value; }
         }
 
-        public int Datofra
+        public DateTimeOffset Datofra
         {
             get { return datofra; }
             set { datofra = value; OnPropertyChanged(nameof(datofra)); }
         }
-        public int Datotil
+        public DateTimeOffset Datotil
         {
             get { return datotil; }
             set { datotil = value; OnPropertyChanged(nameof(Datotil)); }
