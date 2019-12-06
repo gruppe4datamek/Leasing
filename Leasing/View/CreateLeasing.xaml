@@ -40,7 +40,7 @@
 
 
 
-            <ComboBox Margin="350,-350,0,0" ItemsSource="{Binding BilIds}" Header="Bil" Width="100" >
+            <ComboBox Margin="350,-350,0,0" ItemsSource="{Binding BilIds}" SelectedItem="{Binding SelectedNummerPlade, Mode=TwoWay}" Header="Bil" Width="100" >
 
           
             </ComboBox>
@@ -49,11 +49,11 @@
 
             </ComboBox>
 
-            <ComboBox Margin="350,-200,0,0" ItemsSource="{Binding MedarbejderIds}" Header="Medarbejder" Width="100" >
+            <ComboBox Margin="350,-200,0,0" ItemsSource="{Binding MedarbejderIds}" SelectedItem="{Binding SelectedMCPRNummer, Mode=TwoWay}" Header="Medarbejder" Width="100" >
 
             </ComboBox>
 
-            <ComboBox Margin="350,-125,0,0" ItemsSource="{Binding KundeIds, Mode=TwoWay}" Header="Kunde" Width="100" >
+            <ComboBox Margin="350,-125,0,0" ItemsSource="{Binding KundeIds, Mode=TwoWay}" SelectedItem="{Binding SelectedKCPRNummer, Mode=TwoWay}" Header="Kunde" Width="100" >
 
             </ComboBox>
 

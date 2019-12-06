@@ -22,8 +22,8 @@ namespace Leasing.ViewModel
         OpretMedarbejderViewModel omvm = new OpretMedarbejderViewModel();
         private ObservableCollection<string> _serviceAftale;
         private int udlejningsId;
-        private int datofra;
-        private int datotil;
+        private DateTimeOffset datofra;
+        private DateTimeOffset datotil;
         private int maxKilometerTal;
         private string addresse;
         private int mCPRNummer;
@@ -37,6 +37,8 @@ namespace Leasing.ViewModel
         public OpretLeasingViewModel()
         {
             //_selected = new Bil();h
+            datofra = new DateTimeOffset();
+            datotil = new DateTimeOffset();
             AddCommand = new RelayCommand(tilføjLeasing);
             singleton = new LeasingCatalogSingleton();
             Leasings = new ObservableCollection<Leasing1>();
@@ -52,6 +54,12 @@ namespace Leasing.ViewModel
                     Leasings.Add(l);
                 }
         }
+
+        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date)
+        {
+            return new DateTime(date.Year, date.Month, date.Day);
+        }
+
 
 
         public RelayCommand AddCommand { get; set; }
@@ -94,12 +102,12 @@ namespace Leasing.ViewModel
             set { addresse = value; }
         }
 
-        public int Datofra
+        public DateTimeOffset Datofra
         {
             get { return datofra; }
             set { datofra = value; OnPropertyChanged(nameof(datofra)); }
         }
-        public int Datotil
+        public DateTimeOffset Datotil
         {
             get { return datotil; }
             set { datotil = value; OnPropertyChanged(nameof(Datotil)); }
@@ -130,6 +138,21 @@ namespace Leasing.ViewModel
             }
             set { _serviceAftale = value; OnPropertyChanged(nameof(ServiceAftale)); }
             
+        }
+
+        private DateTimeOffset _selectedDatoFra;
+
+        public DateTimeOffset SelectedDatoFra
+        {
+            get { return _selectedDatoFra; }
+            set { _selectedDatoFra = value; OnPropertyChanged(nameof(SelectedDatoFra)); }
+        }
+
+        private DateTimeOffset _selectedDatoTil;
+        public DateTimeOffset SelectedDatoTil
+        {
+            get { return _selectedDatoTil; }
+            set { _selectedDatoTil = value; OnPropertyChanged(nameof(SelectedDatoTil)); }
         }
 
         private int _selectednummerPlade;
