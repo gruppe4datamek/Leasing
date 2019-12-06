@@ -37,6 +37,8 @@ namespace Leasing.ViewModel
         public OpretLeasingViewModel()
         {
             //_selected = new Bil();h
+            datofra = new DateTimeOffset();
+            datotil = new DateTimeOffset();
             AddCommand = new RelayCommand(tilføjLeasing);
             singleton = new LeasingCatalogSingleton();
             Leasings = new ObservableCollection<Leasing1>();
@@ -53,9 +55,9 @@ namespace Leasing.ViewModel
                 }
         }
 
-        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date, TimeSpan time)
+        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date)
         {
-            return new DateTime(date.Year, date.Month, date.Day, time.Hours, time.Minutes, 0);
+            return new DateTime(date.Year, date.Month, date.Day);
         }
 
 
@@ -136,6 +138,21 @@ namespace Leasing.ViewModel
             }
             set { _serviceAftale = value; OnPropertyChanged(nameof(ServiceAftale)); }
             
+        }
+
+        private DateTimeOffset _selectedDatoFra;
+
+        public DateTimeOffset SelectedDatoFra
+        {
+            get { return _selectedDatoFra; }
+            set { _selectedDatoFra = value; OnPropertyChanged(nameof(SelectedDatoFra)); }
+        }
+
+        private DateTimeOffset _selectedDatoTil;
+        public DateTimeOffset SelectedDatoTil
+        {
+            get { return _selectedDatoTil; }
+            set { _selectedDatoTil = value; OnPropertyChanged(nameof(SelectedDatoTil)); }
         }
 
         private int _selectednummerPlade;
