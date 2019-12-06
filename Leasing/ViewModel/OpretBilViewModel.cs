@@ -93,7 +93,8 @@ namespace Leasing.ViewModel
 
         public ObservableCollection<Bil> Bils
         {
-            get { return new ObservableCollection<Bil>(WebApiBilAsync.GetCar("api/Bils/")); }
+            //get { return new ObservableCollection<Bil>(WebApiBilAsync.GetCar("api/Bils/")); }
+            get { return new ObservableCollection<Bil>(); }
             set { _bils = value; }
         }
 
