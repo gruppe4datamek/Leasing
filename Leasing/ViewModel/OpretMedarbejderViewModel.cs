@@ -22,7 +22,7 @@ namespace Leasing.ViewModel
         private string email;
         private string navn;
         private int cprnummer;
-        
+
 
         public OpretMedarbejderViewModel()
         {
@@ -40,7 +40,7 @@ namespace Leasing.ViewModel
         public void tilføjMedarbejder()
         {
 
-            Medarbejder m1 = new Medarbejder(email, navn, cprnummer);
+            Medarbejder m1 = new Medarbejder(0,email, navn, cprnummer);
             singleton.addMedarbejder(m1);
 
             OnPropertyChanged(nameof(tilføjMedarbejder));
@@ -66,7 +66,10 @@ namespace Leasing.ViewModel
 
         public ObservableCollection<Medarbejder> Medarbejders
         {
-            get { return _medarbejder; }
+            get
+            {
+                return new ObservableCollection<Medarbejder>(
+                    WebApiMedarbejderAsync.GetMedarbejder("api/Medarbejders/")); }
             set { _medarbejder = value; }
         }
         public event PropertyChangedEventHandler PropertyChanged;

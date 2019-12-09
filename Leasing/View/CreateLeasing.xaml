@@ -49,7 +49,7 @@
 
             </ComboBox>
 
-            <ComboBox Margin="350,-200,0,0" ItemsSource="{Binding MedarbejderIds}" SelectedItem="{Binding SelectedMCPRNummer, Mode=TwoWay}" Header="Medarbejder" Width="100" >
+            <ComboBox Margin="350,-200,0,0" ItemsSource="{Binding MedarbejderIds}" SelectedItem="{Binding SelectedMID, Mode=TwoWay}" Header="Medarbejder" Width="100" >
 
             </ComboBox>
 

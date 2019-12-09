@@ -66,31 +66,33 @@ namespace Leasing.ViewModel
         public void tilføjLeasing()
         {
             
-            Leasing1 k1 = new Leasing1(udlejningsId, datofra, datotil, maxKilometerTal, addresse, bool.Parse(SelectedServiceAftale) );
+            Leasing1 k1 = new Leasing1(Leasing_id, Dato_Fra, Dato_Til, Max_Kilometer, addresse, bool.Parse(SelectedServiceAftale), SelectedMID, SelectedKCPRNummer, SelectedNummerPlade );
             singleton.addleasing(k1);
             OnPropertyChanged(nameof(tilføjLeasing));
         }
 
-        
 
-        public int MCPRNummer
+        private int _mId;
+        public int Medarbejder_id
         {
-            get { return mCPRNummer;}
-            set {mCPRNummer= value; }
+            get { return _mId; }
+            set { _mId = value; }
         }
 
-        public int KCPRNummer
+        private int _cprnummer;
+        public int Kunde_id
         {
-            get { return kCPRNummer;}
-            set { kCPRNummer = value; }
+            get { return _cprnummer; }
+            set { _cprnummer = value; }
         }
 
-        public int Nummerplade
+        private int _nummerplade;
+        public int Bil_id
         {
-            get { return nummerplade; }
-            set { nummerplade = value; }
+            get { return _nummerplade; }
+            set { _nummerplade = value; }
         }
-        public int MaxKilometerTal
+        public int Max_Kilometer
         {
             get { return maxKilometerTal; }
             set { maxKilometerTal = value; }
@@ -102,24 +104,24 @@ namespace Leasing.ViewModel
             set { addresse = value; }
         }
 
-        public DateTimeOffset Datofra
+        public DateTimeOffset Dato_Fra
         {
             get { return datofra; }
-            set { datofra = value; OnPropertyChanged(nameof(datofra)); }
+            set { datofra = value; OnPropertyChanged(nameof(Dato_Fra)); }
         }
-        public DateTimeOffset Datotil
+        public DateTimeOffset Dato_Til
         {
             get { return datotil; }
-            set { datotil = value; OnPropertyChanged(nameof(Datotil)); }
+            set { datotil = value; OnPropertyChanged(nameof(Dato_Til)); }
         }
-        public int UdlejningsId
+        public int Leasing_id
         {
             get { return udlejningsId; }
-            set { udlejningsId = value; OnPropertyChanged(nameof(udlejningsId)); }
+            set { udlejningsId = value; OnPropertyChanged(nameof(Leasing_id)); }
         }
 
 
-        public ObservableCollection<Model.Leasing1> Leasings
+        public ObservableCollection<Leasing1> Leasings
         {
             get { return _leasings; }
             set { _leasings = value; OnPropertyChanged(nameof(Leasings)); }
@@ -127,17 +129,17 @@ namespace Leasing.ViewModel
 
 
 
-       
+
         public ObservableCollection<string> ServiceAftale
         {
             get
             {
                 return _serviceAftale;
 
-                
+
             }
             set { _serviceAftale = value; OnPropertyChanged(nameof(ServiceAftale)); }
-            
+
         }
 
         private DateTimeOffset _selectedDatoFra;
@@ -163,20 +165,20 @@ namespace Leasing.ViewModel
             set { _selectednummerPlade = value; OnPropertyChanged(nameof(SelectedNummerPlade)); }
         }
 
-        private int _selectedMCPRnummer;
-
-        public int SelectedMCPRNummer
-        {
-            get { return _selectedMCPRnummer; }
-            set { _selectedMCPRnummer = value; OnPropertyChanged(nameof(SelectedMCPRNummer)); }
-        }
-
         private int _selectedKCPRnummer;
 
         public int SelectedKCPRNummer
         {
             get { return _selectedKCPRnummer; }
             set { _selectedKCPRnummer = value; OnPropertyChanged(nameof(SelectedKCPRNummer)); }
+        }
+
+        private int _selectedmid;
+
+        public int SelectedMID
+        {
+            get { return _selectedmid; }
+            set { _selectedmid = value; OnPropertyChanged(nameof(SelectedMID)); }
         }
 
 
@@ -233,7 +235,7 @@ namespace Leasing.ViewModel
                 ObservableCollection<int> MedarbejderIdList = new ObservableCollection<int>();
                 foreach (var Medarbejder in mylist)
                 {
-                    MedarbejderIdList.Add(Medarbejder.CPRNummer);
+                    MedarbejderIdList.Add(Medarbejder.Medarbejder_id);
 
                 }
 
