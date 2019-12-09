@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiLeasing4", "WebApiLeasing4\WebApiLeasing4.csproj", "{141431D1-E294-40FB-8144-8D760213F015}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseLeasing", "..\..\..\Skrivebord\Leasing\DatabaseLeasing\DatabaseLeasing.sqlproj", "{A251A60C-1D48-4E41-8BBC-6D4800541457}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,36 @@ Global
 		{141431D1-E294-40FB-8144-8D760213F015}.Release|x64.Build.0 = Release|Any CPU
 		{141431D1-E294-40FB-8144-8D760213F015}.Release|x86.ActiveCfg = Release|Any CPU
 		{141431D1-E294-40FB-8144-8D760213F015}.Release|x86.Build.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|ARM.Build.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|ARM64.Deploy.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|x64.Build.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|x86.Build.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|ARM.Build.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|ARM.Deploy.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|ARM64.Build.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|ARM64.Deploy.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|x64.ActiveCfg = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|x64.Build.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|x64.Deploy.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|x86.ActiveCfg = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|x86.Build.0 = Release|Any CPU
+		{A251A60C-1D48-4E41-8BBC-6D4800541457}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

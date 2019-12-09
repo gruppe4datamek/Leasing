@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="Leasing.ListeAfBiler"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Leasing"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:Leasing.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <viewModel:OpretBilViewModel></viewModel:OpretBilViewModel>
+    </Page.DataContext>
+    <Grid>
+        
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Button Click="MainPage" Background="Transparent" Margin="0,0,0,0" Width="100" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <Image Source="Assets/grå pil venstre1.png" Margin="0,0,0,0"  ></Image>
+            </Button>
+        </StackPanel>
+
+        <ListView ItemsSource="{Binding Bils}" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Run Text = "Nummerplade"    />
+                        <Run Text="{Binding Nummerplade}" Foreground="SlateGray"  />
+                        <Run Text="model" />
+                        <Run Text="{Binding Model}"   Foreground="SlateGray"/>
+                        <Run Text="Mærke" />
+                        <Run Text="{Binding Mærke}" Foreground="SlateGray" />
+                        <Run Text="Kilometertal" />
+                        <Run Text="{Binding Kilometertal}"   Foreground="SlateGray"/>
+                        <Run Text="Farve" />
+                        <Run Text="{Binding Farve}"  Foreground="SlateGray" />
+                        <Run Text="Årgang" />
+                        <Run Text="{Binding Årgang}"   Foreground="SlateGray"/>
+                        <Run Text="Tilgængelig" />
+                        <Run Text="{Binding Tilgængelig}"  Foreground="SlateGray" />
+
+
+
+                    </TextBlock>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+
+
+    </Grid>
+</Page>
