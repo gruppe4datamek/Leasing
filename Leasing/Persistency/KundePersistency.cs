@@ -9,7 +9,7 @@ namespace Leasing.Persistency
 {
     class KundePersistency
     {
-        private const string ServerUrl = "http://localhost:50171";
+        private const string ServerUrl = "http://localhost:60458";
 
         public async Task AddKundeAsync(Kunde k)
         {

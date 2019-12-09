@@ -9,6 +9,7 @@ namespace Leasing.Model
     class Medarbejder
     {
         //instance field
+        private int _mId;
 
         private string _email;
         private string _navn;
@@ -19,14 +20,20 @@ namespace Leasing.Model
 
         }
 
-        public Medarbejder(string email, string navn, int cprnummer)
+        public Medarbejder(int Id, string email, string navn, int cprnummer)
         {
 
             _navn = navn;
             _cprnummer = cprnummer;
             _email = email;
+            _mId = Id;
         }
-
+        
+        public int Medarbejder_id
+        {
+            get { return _mId; }
+            set { _mId = value; }
+        }
         public string Email
         {
             get { return _email; }

@@ -10,49 +10,54 @@ namespace Leasing.Model
     class Leasing1
     {
         //instance field
-        private int _udlejningsId;
+        private int _leasingId;
+       
         private DateTimeOffset _datoFra;
         private DateTimeOffset _DatoTil;
         private int _maxKilometerTal;
         private string _addresse;
         private bool _serviceAftale;
-        private int mCPRNummer;
-        private int kCPRNummer;
-        private int nummerplade;
+        private int _mid;
+        private int _kid;
+        private int _pid;
        
         private ObservableCollection<bool> serviceAftale;
 
         
 
-        public Leasing1(int udlejningsId, DateTimeOffset datofra, DateTimeOffset datotil, int maxKilometerTal, string addresse, bool serviceAftale)
+        public Leasing1(int leasingId, DateTimeOffset datofra, DateTimeOffset datotil, int maxKilometerTal, string addresse, bool serviceAftale, int mid, int kid, int nplade )
         {
-            _udlejningsId = udlejningsId;
+           
             _datoFra = datofra;
             _DatoTil = datotil;
             _maxKilometerTal = maxKilometerTal;
             _addresse = addresse;
             _serviceAftale = serviceAftale;
+            _mid = mid;
+            _kid = kid;
+            _pid = nplade;
+            _leasingId = leasingId;
         }
 
-        public int MaxKilometerTal
+        public int Max_Kilometer
         {
             get { return _maxKilometerTal;}
             set { _maxKilometerTal = value; }
         }
-        public int MCPRNummer
+        public int Medarbejder_id
         {
-            get { return mCPRNummer; }
-            set { mCPRNummer = value; }
+            get { return _mid; }
+            set { _mid = value; }
         }
-        public int KCPRNummer
+        public int Kunde_id
         {
-            get { return kCPRNummer; }
-            set { kCPRNummer = value; }
+            get { return _kid; }
+            set { _kid = value; }
         }
-        public int Nummerplade
+        public int Bil_id
         {
-            get { return nummerplade; }
-            set { nummerplade = value; }
+            get { return _pid; }
+            set { _pid = value; }
         }
 
         public string Addresse
@@ -61,22 +66,18 @@ namespace Leasing.Model
             set { _addresse = value; }
         }
 
-        public bool ServiceAftale
+        public bool Service_Aftale
         {
             get { return _serviceAftale; }
             set { _serviceAftale = value; }
         }
-        public int UdlejningsId
-        {
-            get { return _udlejningsId; }
-            set { _udlejningsId = value; }
-        }
-        public DateTimeOffset DatoFra
+       
+        public DateTimeOffset Dato_Fra
         {
             get { return _datoFra; }
             set { _datoFra = value; }
         }
-        public DateTimeOffset DatoTil
+        public DateTimeOffset Dato_Til
         {
             get { return _DatoTil; }
             set { _DatoTil = value; }
