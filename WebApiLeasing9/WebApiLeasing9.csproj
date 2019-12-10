@@ -163,7 +163,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Bil.cs" />
+    <Compile Include="Controllers\BilsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KundesController.cs" />
+    <Compile Include="Controllers\LeasingsController.cs" />
+    <Compile Include="Controllers\MedarbejdersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

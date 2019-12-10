@@ -66,7 +66,8 @@ namespace Leasing.ViewModel
         public void tilføjLeasing()
         {
             
-            Leasing1 k1 = new Leasing1(Leasing_id, Dato_Fra, Dato_Til, Max_Kilometer, addresse, bool.Parse(SelectedServiceAftale), SelectedMID, SelectedKCPRNummer, SelectedNummerPlade );
+            //Leasing1 k1 = new Leasing1(Leasing_id, Dato_Fra, Dato_Til, Max_Kilometer, addresse, bool.Parse(SelectedServiceAftale), SelectedMID, SelectedKCPRNummer, SelectedNummerPlade );
+            Leasing1 k1 = new Leasing1(0, Dato_Fra, Dato_Til,100, "Noway", true, 1, 7, 23 );
             singleton.addleasing(k1);
             OnPropertyChanged(nameof(tilføjLeasing));
         }

@@ -15,7 +15,7 @@ namespace Leasing.Persistency
 {
     class BilPersistency
     {
-        private const string ServerUrl = "http://localhost:60458";
+        private const string ServerUrl = "http://localhost:60529";
 
       
 

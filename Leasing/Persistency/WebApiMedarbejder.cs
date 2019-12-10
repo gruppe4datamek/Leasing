@@ -18,7 +18,7 @@ namespace Leasing.Persistency
             HttpClientHandler handler = new HttpClientHandler() { UseDefaultCredentials = true };
             using (var client = new HttpClient(handler))
             {
-                client.BaseAddress = new Uri("http://localhost:60458/");
+                client.BaseAddress = new Uri("http://localhost:60529/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try

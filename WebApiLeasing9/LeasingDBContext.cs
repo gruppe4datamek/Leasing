@@ -10,6 +10,8 @@
         public LeasingDBContext()
             : base("name=LeasingDBContext")
         {
+            base.Configuration.LazyLoadingEnabled = false;
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Bil> Bils { get; set; }
