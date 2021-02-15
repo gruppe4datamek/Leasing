@@ -26,5 +26,10 @@ namespace Leasing.View
         {
             this.InitializeComponent();
         }
+
+        public void Medarbejder_onclick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OpretMedarbejderPage));
+        }
     }
 }

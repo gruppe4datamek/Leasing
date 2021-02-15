@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -122,16 +122,28 @@
     <Compile Include="Common\Relaycommand.cs" />
     <Compile Include="Domain\CarCatalogSingleton.cs" />
     <Compile Include="Domain\KundeCatalogSingleton.cs" />
+    <Compile Include="Domain\LeasingCatalogSingleton.cs" />
     <Compile Include="Domain\MedarbejderCatalogSingleton.cs" />
+    <Compile Include="Persistency\WebApiLeasingAsync.cs" />
+    <Compile Include="ViewModel\OpretLeasingViewModel.cs" />
+    <Compile Include="View\CreateLeasing.xaml.cs">
+      <DependentUpon>CreateLeasing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ListeAfBiler.xaml.cs">
       <DependentUpon>ListeAfBiler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListeAfKunder.xaml.cs">
+      <DependentUpon>ListeAfKunder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListeAfLeasinger.xaml.cs">
+      <DependentUpon>ListeAfLeasinger.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Bil.cs" />
     <Compile Include="Model\Kunde.cs" />
-    <Compile Include="Model\Leasing.cs" />
+    <Compile Include="Model\Leasing1.cs" />
     <Compile Include="Model\Medarbejder.cs" />
     <Compile Include="Persistency\BilPersistency.cs" />
     <Compile Include="Persistency\MedarbejderPersistency.cs" />
@@ -148,6 +160,9 @@
     <Compile Include="ViewModel\OpretMedarbejderViewModel.cs" />
     <Compile Include="View\ListeAfMedarbejder.xaml.cs">
       <DependentUpon>ListeAfMedarbejder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpretKundePage.xaml.cs">
+      <DependentUpon>OpretKundePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OpretMedarbejderPage.xaml.cs">
       <DependentUpon>OpretMedarbejderPage.xaml</DependentUpon>
@@ -177,7 +192,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\CreateLeasing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ListeAfBiler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListeAfKunder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListeAfLeasinger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +213,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ListeAfMedarbejder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpretKundePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

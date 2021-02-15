@@ -1,5 +1,6 @@
 ﻿using Leasing.Common;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -36,8 +37,8 @@ namespace Leasing.ViewModel
             singleton = new CarCatalogSingleton();
             Bils = new ObservableCollection<Bil>();
 
-            if(HentBiler() != null)
-                foreach(Bil b in HentBiler())
+            if (HentBiler() != null)
+                foreach (Bil b in HentBiler())
                 {
                     Bils.Add(b);
                 }
@@ -92,7 +93,8 @@ namespace Leasing.ViewModel
 
         public ObservableCollection<Bil> Bils
         {
-            get { return _bils; }
+            get { return new ObservableCollection<Bil>(WebApiBilAsync.GetCar("api/Bils/")); }
+            //get { return new ObservableCollection<Bil>(); }
             set { _bils = value; }
         }
 
@@ -122,6 +124,24 @@ namespace Leasing.ViewModel
                 return null;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
    

@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="Leasing.View.ListeAfKunder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Leasing.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:Leasing.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <viewModel:OpretKundeViewModel></viewModel:OpretKundeViewModel>
+    </Page.DataContext>
+    <Grid>
+
+        <StackPanel Margin="0,0,0,0">
+            <Button Click="Kunde_onclick" Margin="50,850,0,0" Width="150" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Tilbage" FontSize="25" >
+
+            </Button>
+
+        </StackPanel>
+
+        <ListView ItemsSource="{Binding Kundes}" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Run Text = "Fornavn"    />
+                        <Run Text="{Binding Fornavn}" Foreground="SlateGray"  />
+                        <Run Text="Efternavn" />
+                        <Run Text="{Binding Efternavn}"   Foreground="SlateGray"/>
+                        <Run Text="Kundeid" />
+                        <Run Text="{Binding CPRNummer}" Foreground="SlateGray" />
+                        <Run Text="Email" />
+                        <Run Text="{Binding Email}" Foreground="SlateGray" />
+
+
+
+
+                    </TextBlock>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </Grid>
+</Page>

@@ -21,15 +21,26 @@ namespace Leasing.ViewModel
 
         private string email;
         private string navn;
-        private int id;
+        private int cprnummer;
 
 
+        public OpretMedarbejderViewModel()
+        {
+            AddCommand = new RelayCommand(tilføjMedarbejder);
+            singleton = new MedarbejderCatalogSingleton();
+            Medarbejders = new ObservableCollection<Medarbejder>();
 
+            if (HentmeMedarbejder() != null)
+                foreach (Medarbejder k in HentmeMedarbejder())
+                {
+                    Medarbejders.Add(k);
+                }
+        }
         public RelayCommand AddCommand { get; set; }
         public void tilføjMedarbejder()
         {
 
-            Medarbejder m1 = new Medarbejder(email, navn, id);
+            Medarbejder m1 = new Medarbejder(0,email, navn, cprnummer);
             singleton.addMedarbejder(m1);
 
             OnPropertyChanged(nameof(tilføjMedarbejder));
@@ -47,12 +58,20 @@ namespace Leasing.ViewModel
             set { navn = value; }
         }
 
-        public int ID
+        public int CPRNummer
         {
-            get { return id; }
-            set { id = value; }
+            get { return cprnummer; }
+            set { cprnummer = value; }
         }
 
+        public ObservableCollection<Medarbejder> Medarbejders
+        {
+            get
+            {
+                return new ObservableCollection<Medarbejder>(
+                    WebApiMedarbejderAsync.GetMedarbejder("api/Medarbejders/")); }
+            set { _medarbejder = value; }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged

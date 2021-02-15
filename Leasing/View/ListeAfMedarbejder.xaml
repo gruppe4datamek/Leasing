@@ -5,10 +5,43 @@
     xmlns:local="using:Leasing.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:Leasing.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.DataContext>
+        <viewModel:OpretMedarbejderViewModel></viewModel:OpretMedarbejderViewModel>
+    </Page.DataContext>
+
     <Grid>
+
+        <StackPanel Margin="0,0,0,0">
+            <Button Click="Medarbejder_onclick" Margin="50,850,0,0" Width="150" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Tilbage" FontSize="25" >
+
+            </Button>
+
+        </StackPanel>
+
+        <ListView ItemsSource="{Binding Medarbejders}" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Run Text = "Navn"    />
+                        <Run Text="{Binding Navn}" Foreground="SlateGray"  />
+                        <Run Text="Email" />
+                        <Run Text="{Binding Email}"   Foreground="SlateGray"/>
+                        <Run Text="Id" />
+                        <Run Text="{Binding CPRNummer}" Foreground="SlateGray" />
+                        
+
+
+
+                    </TextBlock>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
 
     </Grid>
 </Page>

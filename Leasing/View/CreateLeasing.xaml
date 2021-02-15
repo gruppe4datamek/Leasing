@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="Leasing.View.CreateLeasing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Leasing.ViewModel"
+    xmlns:lvm="using:Leasing.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <lvm:OpretLeasingViewModel></lvm:OpretLeasingViewModel>
+    </Page.DataContext>
+    <Grid>
+
+        
+
+        <StackPanel>
+
+
+            <TextBlock Height="160" Width="700" Margin="0,0,0,0" Text="Opret Leasing" FontSize="100" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="TextBlock_SelectionChanged"></TextBlock>
+
+            <TextBox x:Name="Addresse" Header="Addresse"  Height="75" Width="500" Margin="0,50,0,0" TextWrapping="Wrap" Text="{Binding Addresse, Mode=TwoWay}"></TextBox>
+
+            <TextBox x:Name="MaxKilometerTal" Header="Max Kilometertal"  Height="75" Width="500" Margin="0,25,0,0" TextWrapping="Wrap" Text="{Binding MaxKilometerTal, Mode=TwoWay}"></TextBox>
+
+            <DatePicker Header="Date From"  Margin="350,25,0,175" SelectedDate="{Binding Datofra, Mode=TwoWay}" >
+
+            </DatePicker>
+
+            <DatePicker Header="Date To"  Margin="350,-150,0,200" SelectedDate="{Binding Datofra, Mode=TwoWay}" >
+
+            </DatePicker>
+
+            <Button Command="{Binding AddCommand}" Name="AddButton" Height="50" Width="100" Margin="350,10,0,0" >
+                <TextBlock Text="Add" Margin="0,0,0,0" ></TextBlock>
+            </Button>
+
+            
+
+
+
+            <ComboBox Margin="350,-350,0,0" ItemsSource="{Binding BilIds}" SelectedItem="{Binding SelectedNummerPlade, Mode=TwoWay}" Header="Bil" Width="100" >
+
+          
+            </ComboBox>
+
+            <ComboBox Margin="500,-250,0,0" ItemsSource="{Binding ServiceAftale}" SelectedValue="{Binding SelectedServiceAftale ,Mode=TwoWay}"  Header="ServiceAftale" Width="100" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" >
+
+            </ComboBox>
+
+            <ComboBox Margin="350,-200,0,0" ItemsSource="{Binding MedarbejderIds}" SelectedItem="{Binding SelectedMID, Mode=TwoWay}" Header="Medarbejder" Width="100" >
+
+            </ComboBox>
+
+            <ComboBox Margin="350,-125,0,0" ItemsSource="{Binding KundeIds, Mode=TwoWay}" SelectedItem="{Binding SelectedKCPRNummer, Mode=TwoWay}" Header="Kunde" Width="100" >
+
+            </ComboBox>
+
+            <Button Click="ListeAfLeasinger"  Margin="500,-50,350,0" Width="100" Height="50">
+                <TextBlock Text="Collection" ></TextBlock>
+            </Button>
+            
+            <StackPanel>
+
+
+                <RelativePanel Margin="0,-675,0,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch">
+                    <Button Name="HamburgerButton" Background="Goldenrod" FontFamily="Segoe MDL2 Assets" FontSize="50" Content="&#xE700;" Margin="10,-100,0,0" Click="HamburgerButton_OnClick" HorizontalAlignment="Left" VerticalAlignment="Top"></Button>
+                </RelativePanel>
+
+                <SplitView Name="mySplitView" DisplayMode="Overlay" IsPaneOpen="True" OpenPaneLength="350" Opacity="0.7" Margin="0,-1350,0,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Stretch" Height="252">
+                    <SplitView.Pane>
+                        <StackPanel Margin="0,20,0,0" Padding="20" Orientation="Horizontal" VerticalAlignment="Top" Height="200" Width="450" HorizontalAlignment="Stretch">
+                            <Button Click="Medarbejder_OnClick" Background="DarkGoldenrod" FontSize="15" Margin="0,0,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" >Medarbejder</Button>
+
+                            <Button Click="Kunde_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,0,0,0" Width="150" >Kunde</Button>
+
+                            <Button Click="Biler_OnClick" Background="DarkGoldenrod" FontSize="15" Margin=" -150,125,0,0" Width="150" >Biler</Button>
+
+
+                        </StackPanel>
+
+
+
+                    </SplitView.Pane>
+                </SplitView>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
